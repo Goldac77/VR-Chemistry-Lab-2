@@ -1,10 +1,6 @@
 # VR-Chemistry-Lab-2
  VR Chemisty Lab Version 2.0
 
-Absolutely! Here's an example README file that you can use as a starting point for guiding collaborators on setting up the Unity project after cloning:
-
----
-
 # Unity 3D VR/XR Project Setup Guide
 
 This repository contains a Unity 3D project modified to incorporate VR and XR interaction packages. Follow these steps to set up the project after cloning.
@@ -21,7 +17,7 @@ Make sure you have the following installed:
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/goldac77/vr-chemistry-lab-2.git
+    git clone https://github.com/Goldac77/VR-Chemistry-Lab-2.git
     ```
 
 2. **Open the Project in Unity**
