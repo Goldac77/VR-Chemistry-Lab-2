@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - funnel
+  - reagent
+  - beakerSolution
+  - buretteSolution
+  - pipette
+  - indicator
   layers:
   - Default
   - TransparentFX
