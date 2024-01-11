@@ -47,13 +47,20 @@ public class BuretteTapScript : MonoBehaviour
 
     public void OnGrabbed()
     {
-        //get the material of the liquid in the burette
+        //get the material of the liquid in the burette and apply to particle system
         var main = liquidFlowing.main;
         main.startColor = buretteSolution.GetComponent<Renderer>().material.color;
         if(buretteScript.isFilled)
         {
-            liquidFlowing.Play();
-            beakerSolutionScript.isReacting = true;
+            if(beakerSolutionScript.indicatorAdded)
+            {
+                liquidFlowing.Play();
+                beakerSolutionScript.isReacting = true;
+            } else
+            {
+                Debug.Log("Add indicator first lol");
+            }
+            
         } else
         {
             Debug.Log("I'm empty :/");

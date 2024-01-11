@@ -8,10 +8,15 @@ public class BeakerSolutionScript : MonoBehaviour
     Material startingMaterial;
 
     //colour changes
-    [SerializeField] Color indicatorColor;
-    [SerializeField] Color endPointColor;
+    [SerializeField] Color indicatorColorAcid;
+    [SerializeField] Color indicatorColorBase;
+    [SerializeField] Color endPointColorAcid;
+    [SerializeField] Color endPointColorBase;
+
+    Material currentMaterial;
 
     public bool isReacting;
+    public bool indicatorAdded;
 
     float count = 0;
     // Start is called before the first frame update
@@ -19,13 +24,16 @@ public class BeakerSolutionScript : MonoBehaviour
     {
         isFilled = false;
         isReacting = false;
+        indicatorAdded = false;
         startingMaterial = GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<Renderer>().material != startingMaterial)
+        currentMaterial = GetComponent<Renderer>().material;
+
+        if (currentMaterial != startingMaterial)
         {
             isFilled = true;
         }
@@ -36,16 +44,33 @@ public class BeakerSolutionScript : MonoBehaviour
 
         if(isReacting)
         {
-            //it takes 10.5 seconds for the burette to be empty
+            //NOTE: it takes 10.5 seconds for the burette to be empty
             count += Time.deltaTime;
-            if(count >= 8)
+
+            if (currentMaterial.name == "HCL (Instance) (Instance) (Instance)") //if acid fills beaker
             {
-                GetComponent<Renderer>().material.color = endPointColor;
-            } else if (count > 4 && count < 5)
+                if (count >= 8)
+                {
+                    currentMaterial.color = endPointColorAcid;
+                }
+                else if (count > 4 && count < 5) //this logic sucks lol...
+                {
+                    //temporary color change
+                    currentMaterial.color = endPointColorAcid;
+                    Invoke("ReturnColorAcid", 2f);
+                }
+            } else if(currentMaterial.name == "NaOH (Instance) (Instance) (Instance)")
             {
-                //temporary color change
-                GetComponent<Renderer>().material.color = endPointColor;
-                Invoke("ReturnColor", 2f);
+                if (count >= 8)
+                {
+                    currentMaterial.color = endPointColorBase;
+                }
+                else if (count > 4 && count < 5) //this logic sucks lol...
+                {
+                    //temporary color change
+                    currentMaterial.color = endPointColorBase;
+                    Invoke("ReturnColorBase", 2f);
+                }
             }
         }
 
@@ -63,14 +88,28 @@ public class BeakerSolutionScript : MonoBehaviour
         {
             if(isFilled)
             {
-                GetComponent<Renderer>().material.color = indicatorColor;
+                if(currentMaterial.name == "HCL (Instance) (Instance) (Instance)")
+                {
+                    currentMaterial.color = indicatorColorAcid;
+                    indicatorAdded = true;
+                } else if (currentMaterial.name == "NaOH (Instance) (Instance) (Instance)")
+                {
+                    currentMaterial.color = indicatorColorBase;
+                    indicatorAdded = true;
+                } 
             }
         }
     }
 
-    //return to endpoint color
-    private void ReturnColor()
+    //return to indicator color in acid
+    private void ReturnColorAcid()
     {
-        GetComponent<Renderer>().material.color = indicatorColor;
+        currentMaterial.color = indicatorColorAcid;
+    }
+
+    //return to indicator color in bas
+    private void ReturnColorBase()
+    {
+        currentMaterial.color = indicatorColorBase;
     }
 }
