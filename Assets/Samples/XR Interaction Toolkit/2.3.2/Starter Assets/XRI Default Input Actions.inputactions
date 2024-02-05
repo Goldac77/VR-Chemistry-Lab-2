@@ -2104,6 +2104,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Marker",
+            "id": "f10b7a67-da14-4009-9acb-7726f2205eb2",
+            "actions": [
+                {
+                    "name": "Enable Marker",
+                    "type": "Button",
+                    "id": "7ce8aad6-5083-4c1e-8a02-5004595dc96b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6b47d6ab-9a5b-4c57-a2c6-c78afba9867f",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Enable Marker",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

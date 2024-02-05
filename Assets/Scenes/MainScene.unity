@@ -306,6 +306,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5489facc39d7f4f9048d720fb510ec, type: 3}
+--- !u!114 &367337124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3697153116052023479, guid: 73f6ed75660ea374c8e0b57fbf226db0, type: 3}
+  m_PrefabInstance: {fileID: 1856571215195733949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186effb6b01013947be1278ca565b62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &369975404 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3127728407712097242, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
@@ -2300,6 +2311,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1567593231}
     m_Modifications:
+    - target: {fileID: 137106437031001770, guid: 6369b96972f16a149900ef3eefedd00a, type: 3}
+      propertyPath: buretteTapScript
+      value: 
+      objectReference: {fileID: 367337124}
     - target: {fileID: 137106437031001770, guid: 6369b96972f16a149900ef3eefedd00a, type: 3}
       propertyPath: indicatorColor.a
       value: 1

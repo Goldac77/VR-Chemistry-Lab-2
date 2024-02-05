@@ -93,7 +93,6 @@ public class BuretteScript : MonoBehaviour
     {
         float minVolume = 0.42f;
         float maxVolume = 0.63f;
-        float range = maxVolume - minVolume;
         float scaleFactor = 50f / (maxVolume - minVolume);
 
         return Mathf.Floor(scaleFactor * (volume - minVolume));
