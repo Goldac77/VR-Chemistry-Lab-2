@@ -15,8 +15,8 @@ public class BeakerSolutionScript_Back : MonoBehaviour
     [SerializeField] Color endPointColorBase;
 
     //Colour changes for dissolution
-    [SerializeField] Color lowSoluble;
-    [SerializeField] Color highSoluble;
+    [SerializeField] Color lowSolubleColor;
+    [SerializeField] Color highSolubleColor;
 
     Material currentMaterial;
     [SerializeField] XRSocketInteractor socketInteractor;
@@ -24,6 +24,8 @@ public class BeakerSolutionScript_Back : MonoBehaviour
     //State Managers
     public bool isReacting;
     public bool indicatorAdded;
+    bool lowSoluble;
+    bool highSoluble;
 
     float count = 0;
     int solubleCount = 0;
@@ -36,6 +38,8 @@ public class BeakerSolutionScript_Back : MonoBehaviour
         indicatorAdded = false;
         startingMaterial = GetComponent<Renderer>().material;
         socketInteractor.socketActive = false;
+        lowSoluble = false;
+        highSoluble = false;
     }
 
     // Update is called once per frame
@@ -88,11 +92,11 @@ public class BeakerSolutionScript_Back : MonoBehaviour
         switch(solubleCount)
         {
             case 2:
-                currentMaterial.color = lowSoluble;
+                lowSoluble = true;
                 break;
 
             case > 4:
-                currentMaterial.color = highSoluble;
+                highSoluble = true;
                 break;
         }
 
@@ -127,6 +131,16 @@ public class BeakerSolutionScript_Back : MonoBehaviour
             } else
             {
                 Debug.Log("Fill the beaker first dude...");
+            }
+
+            if(lowSoluble)
+            {
+                currentMaterial.color = lowSolubleColor;
+            }
+
+            if(highSoluble)
+            {
+                currentMaterial.color = highSolubleColor;
             }
         } else
         {

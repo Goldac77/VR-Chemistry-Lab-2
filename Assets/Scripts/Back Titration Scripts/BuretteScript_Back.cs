@@ -4,14 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class BuretteScript : MonoBehaviour
+public class BuretteScript_Back : MonoBehaviour
 {
     //Burette Objects
     [SerializeField] XRSocketInteractor socketInteractor;
     [SerializeField] GameObject buretteSolution;
     Material startingMaterial;
 
-    [SerializeField] PipetteScript pipetteScript;
+    [SerializeField] PipetteScript_Back pipetteScript_back;
 
     //Burette reading
     [SerializeField] TextMeshProUGUI volume;
@@ -67,21 +67,21 @@ public class BuretteScript : MonoBehaviour
         if(funnelSnapped)
         {
             //allow filling burette
-            if(other.gameObject.tag == "pipette" && pipetteScript.solutionPicked && !isFilled)
+            if(other.gameObject.tag == "pipette" && pipetteScript_back.solutionPicked && !isFilled)
             {
                 acidMaterial.SetFloat("_Fill", 0.63f);
                 baseMaterial.SetFloat("_Fill", 0.63f);
-                switch(pipetteScript.pipetteSolution.GetComponent<Renderer>().material.name)
+                switch(pipetteScript_back.pipetteSolution.GetComponent<Renderer>().material.name)
                 {
                     case "HCL (Instance) (Instance)":
                         buretteSolution.GetComponent<Renderer>().material = acidMaterial;
-                        pipetteScript.pipetteSolution.GetComponent<Renderer>().material = startingMaterial;
-                        pipetteScript.solutionPicked = false;
+                        pipetteScript_back.pipetteSolution.GetComponent<Renderer>().material = startingMaterial;
+                        pipetteScript_back.solutionPicked = false;
                         break;
                     case "NaOH (Instance) (Instance)":
                         buretteSolution.GetComponent<Renderer>().material = baseMaterial;
-                        pipetteScript.pipetteSolution.GetComponent<Renderer>().material = startingMaterial;
-                        pipetteScript.solutionPicked = false;
+                        pipetteScript_back.pipetteSolution.GetComponent<Renderer>().material = startingMaterial;
+                        pipetteScript_back.solutionPicked = false;
                         break;
                 }
                 isFilled = true;
