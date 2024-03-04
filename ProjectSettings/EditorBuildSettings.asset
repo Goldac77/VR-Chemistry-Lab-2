@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/BackTitration.unity
+    guid: 0a0861d496ea9294baba6f92e50ececc
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f76596613c7c23c41a3cc27fd06464b7, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0fe64789f58e07844a6e4a478f95837b, type: 2}

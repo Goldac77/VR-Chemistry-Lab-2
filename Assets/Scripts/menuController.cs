@@ -9,4 +9,10 @@ public class menuController : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+
+    //code to launch the back titration scene
+    public void BackBtn()
+    {
+        SceneManager.LoadScene("BackTitration");
+    }
 }
