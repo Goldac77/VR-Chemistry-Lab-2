@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -8,22 +9,25 @@ public class ScaleReadingScript : MonoBehaviour
     //and sends that data to TextMeshProGUI
 
     [SerializeField] TextMeshProUGUI massText;
-    XRSocketInteractor socketInteractor;
 
     private void Start()
     {
         massText.text = "0kg";
-        socketInteractor = GetComponent<XRSocketInteractor>();
     }
 
-    public void OnSampleEntered()
+    private void OnTriggerStay(Collider other)
     {
-        IXRSelectInteractable objectInSocket = socketInteractor.GetOldestInteractableSelected();
-        Rigidbody sampleRigidbody = objectInSocket.transform.GetComponent<Rigidbody>();
-        massText.text = sampleRigidbody.mass.ToString() + "kg";
+        List<string> scaleObjects = null;
+        //Debug.Log(other.gameObject.name);
+        scaleObjects.Add(other.gameObject.name);
+
+        for(int i = 0; i < scaleObjects.Count; i++)
+        {
+            Debug.Log(scaleObjects[i]);
+        }
     }
 
-    public void onSampleExited()
+    private void OnTriggerExit(Collider other)
     {
         massText.text = "0kg";
     }
