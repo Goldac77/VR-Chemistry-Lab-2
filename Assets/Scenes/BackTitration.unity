@@ -2329,6 +2329,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: be67a034df9bf41419066bb3dda4ad8b, type: 3}
+--- !u!1 &401680442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8061572426939063545, guid: 7379e4b64d15883489aa2a90dc60e14b, type: 3}
+  m_PrefabInstance: {fileID: 1988148362685216250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &417127733 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 809348709448714533, guid: 6d8ac1885335f184cb575a3584a15401, type: 3}
@@ -8473,6 +8478,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: soluble
       objectReference: {fileID: 0}
+    - target: {fileID: 1263409457951623240, guid: 3e8d47456819f1744bddce659f6d4e4d, type: 3}
+      propertyPath: weighingBoat
+      value: 
+      objectReference: {fileID: 401680442}
+    - target: {fileID: 1373066286477498274, guid: 3e8d47456819f1744bddce659f6d4e4d, type: 3}
+      propertyPath: weighingBoat
+      value: 
+      objectReference: {fileID: 401680442}
     - target: {fileID: 1829221580526215206, guid: 3e8d47456819f1744bddce659f6d4e4d, type: 3}
       propertyPath: m_Constraints
       value: 0
@@ -8505,6 +8518,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.023171933
       objectReference: {fileID: 0}
+    - target: {fileID: 2900692063255227359, guid: 3e8d47456819f1744bddce659f6d4e4d, type: 3}
+      propertyPath: weighingBoat
+      value: 
+      objectReference: {fileID: 401680442}
+    - target: {fileID: 2912443755821989204, guid: 3e8d47456819f1744bddce659f6d4e4d, type: 3}
+      propertyPath: weighingBoat
+      value: 
+      objectReference: {fileID: 401680442}
+    - target: {fileID: 3092071124763917192, guid: 3e8d47456819f1744bddce659f6d4e4d, type: 3}
+      propertyPath: weighingBoat
+      value: 
+      objectReference: {fileID: 401680442}
     - target: {fileID: 3127462121001975840, guid: 3e8d47456819f1744bddce659f6d4e4d, type: 3}
       propertyPath: m_Constraints
       value: 0
@@ -8657,6 +8682,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: soluble
       objectReference: {fileID: 0}
+    - target: {fileID: 6997850680138578720, guid: 3e8d47456819f1744bddce659f6d4e4d, type: 3}
+      propertyPath: weighingBoat
+      value: 
+      objectReference: {fileID: 401680442}
     - target: {fileID: 7316460612678335111, guid: 3e8d47456819f1744bddce659f6d4e4d, type: 3}
       propertyPath: m_Constraints
       value: 0
