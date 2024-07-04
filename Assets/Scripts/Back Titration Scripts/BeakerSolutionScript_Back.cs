@@ -19,7 +19,6 @@ public class BeakerSolutionScript_Back : MonoBehaviour
     [SerializeField] Color highSolubleColor;
 
     Material currentMaterial;
-    [SerializeField] XRSocketInteractor socketInteractor;
 
     //State Managers
     public bool isReacting;
@@ -37,7 +36,6 @@ public class BeakerSolutionScript_Back : MonoBehaviour
         isReacting = false;
         indicatorAdded = false;
         startingMaterial = GetComponent<Renderer>().material;
-        socketInteractor.socketActive = false;
         lowSoluble = false;
         highSoluble = false;
     }
@@ -61,7 +59,7 @@ public class BeakerSolutionScript_Back : MonoBehaviour
             //NOTE: it takes 10.5 seconds for the burette to be empty
             count += Time.deltaTime;
 
-            if (currentMaterial.name == "HCL (Instance) (Instance) (Instance)") //if acid fills beaker
+            if (currentMaterial.name == "HCL(pipette) (Instance) (Instance) (Instance)") //if acid fills beaker
             {
                 if (count >= 8)
                 {
@@ -73,7 +71,7 @@ public class BeakerSolutionScript_Back : MonoBehaviour
                     currentMaterial.color = endPointColorAcid;
                     Invoke("ReturnColorAcid", 2f);
                 }
-            } else if(currentMaterial.name == "NaOH (Instance) (Instance) (Instance)")
+            } else if(currentMaterial.name == "NaOH(pipette) (Instance) (Instance) (Instance)")
             {
                 if (count >= 8)
                 {
@@ -108,11 +106,11 @@ public class BeakerSolutionScript_Back : MonoBehaviour
         {
             if(isFilled)
             {
-                if(currentMaterial.name == "HCL (Instance) (Instance) (Instance)")
+                if (currentMaterial.name == "HCL(pipette) (Instance) (Instance) (Instance)")
                 {
                     currentMaterial.color = indicatorColorAcid;
                     indicatorAdded = true;
-                } else if (currentMaterial.name == "NaOH (Instance) (Instance) (Instance)")
+                } else if (currentMaterial.name == "NaOH(pipette) (Instance) (Instance) (Instance)")
                 {
                     currentMaterial.color = indicatorColorBase;
                     indicatorAdded = true;
@@ -122,7 +120,6 @@ public class BeakerSolutionScript_Back : MonoBehaviour
 
         if(other.gameObject.tag == "soluble")
         {
-            socketInteractor.socketActive = true;
             if(isFilled)
             {
                 GameObject solubleSample = other.gameObject;
@@ -142,9 +139,6 @@ public class BeakerSolutionScript_Back : MonoBehaviour
             {
                 currentMaterial.color = highSolubleColor;
             }
-        } else
-        {
-            socketInteractor.socketActive = false;
         }
     }
 

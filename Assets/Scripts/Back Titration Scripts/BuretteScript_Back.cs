@@ -73,12 +73,12 @@ public class BuretteScript_Back : MonoBehaviour
                 baseMaterial.SetFloat("_Fill", 0.63f);
                 switch(pipetteScript_back.pipetteSolution.GetComponent<Renderer>().material.name)
                 {
-                    case "HCL (Instance) (Instance)":
+                    case "HCL(pipette) (Instance) (Instance)":
                         buretteSolution.GetComponent<Renderer>().material = acidMaterial;
                         pipetteScript_back.pipetteSolution.GetComponent<Renderer>().material = startingMaterial;
                         pipetteScript_back.solutionPicked = false;
                         break;
-                    case "NaOH (Instance) (Instance)":
+                    case "NaOH(pipette) (Instance) (Instance)":
                         buretteSolution.GetComponent<Renderer>().material = baseMaterial;
                         pipetteScript_back.pipetteSolution.GetComponent<Renderer>().material = startingMaterial;
                         pipetteScript_back.solutionPicked = false;

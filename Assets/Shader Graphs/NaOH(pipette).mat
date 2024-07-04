@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8854846723425592214
+--- !u!114 &-4018098434651006810
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HCL
-  m_Shader: {fileID: -6465566751694194690, guid: 0fcf72c380e7ea24f964ee0e8af42301, type: 3}
+  m_Name: NaOH(pipette)
+  m_Shader: {fileID: -6465566751694194690, guid: f134ef6256a577940adbe7f64bfb2833, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -54,5 +54,5 @@ Material:
     - _BUILTIN_ZWriteControl: 0
     - _Fill: 0.63
     m_Colors:
-    - _Color: {r: 0, g: 1, b: 0.03342319, a: 1}
+    - _Color: {r: 0.6509804, g: 0.6509804, b: 0.6509804, a: 1}
   m_BuildTextureStacks: []
