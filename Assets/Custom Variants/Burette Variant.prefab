@@ -5750,6 +5750,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6452793532732973478, guid: ccfcc654324fb1b428e6e7b2fbafd126, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d30fffd2d8ab1a44e88e9195a320825c, type: 2}
     - target: {fileID: 919132149155446097, guid: ccfcc654324fb1b428e6e7b2fbafd126, type: 3}
       propertyPath: m_Name
       value: Burette Variant

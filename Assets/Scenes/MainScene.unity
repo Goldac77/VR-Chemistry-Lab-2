@@ -1239,6 +1239,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452598775}
   m_Mesh: {fileID: 4300000, guid: c3bd1f92f6c766841bf2fe0a1b78f261, type: 3}
+--- !u!114 &591998889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8255582438817907882, guid: 04f923233357b32489388a94658a7fb8, type: 3}
+  m_PrefabInstance: {fileID: 1338091550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &633061297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2827,15 +2838,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6959999563623749427, guid: 04f923233357b32489388a94658a7fb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.594
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 6959999563623749427, guid: 04f923233357b32489388a94658a7fb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.562
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 6959999563623749427, guid: 04f923233357b32489388a94658a7fb8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.435
+      value: 2.94
       objectReference: {fileID: 0}
     - target: {fileID: 6959999563623749427, guid: 04f923233357b32489388a94658a7fb8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4664,17 +4675,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7db1bb6e20b4b49489ec942702a14729, type: 3}
---- !u!114 &2088910646 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3798978347982283234, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
-  m_PrefabInstance: {fileID: 1356168982710188195}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 186effb6b01013947be1278ca565b62c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2108433447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5031,6 +5031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Area_main
       objectReference: {fileID: 0}
+    - target: {fileID: 530441596908661476, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6224307741172443053, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -5075,30 +5079,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8733544096477326401, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
-      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 7368747118332272776, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018291980020060851, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018291980020060851, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: m_InteractionManager
       value: 
-      objectReference: {fileID: 2088910646}
-    - target: {fileID: 8733544096477326401, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      objectReference: {fileID: 591998889}
+    - target: {fileID: 9167811969301676749, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: m_InteractableHoverMeshMaterial
       value: 
-      objectReference: {fileID: 2088910646}
-    - target: {fileID: 8733544096477326401, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
-      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGrabExited
-      objectReference: {fileID: 0}
-    - target: {fileID: 8733544096477326401, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGrabbed
-      objectReference: {fileID: 0}
-    - target: {fileID: 8733544096477326401, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
-      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BuretteTapScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8733544096477326401, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BuretteTapScript, Assembly-CSharp
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 1c69d3b06c884844f91d3c655d5c6049, type: 2}
+    - target: {fileID: 9167811969301676749, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: m_InteractableCantHoverMeshMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c263fb13dff007c46b3acab9eb07a66d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
