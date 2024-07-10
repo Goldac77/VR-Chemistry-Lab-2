@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class ReagentBottleScript_bottle : MonoBehaviour
+public class Debugger : MonoBehaviour
 {
+    public TextMeshProUGUI debugText;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,10 @@ public class ReagentBottleScript_bottle : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void DisplayMessage(string message)
+    {
+        debugText.text = message;
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - pipette
   - indicator
   - soluble
+  - cap
   layers:
   - Default
   - TransparentFX
