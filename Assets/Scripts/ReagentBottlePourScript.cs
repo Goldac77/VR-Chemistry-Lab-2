@@ -18,16 +18,23 @@ public class ReagentBottlePourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        debugger.DisplayMessage($"bottle rotation: {gameObject.transform.localEulerAngles.z}");
         if (!capAttached)
         {
-            debugger.DisplayMessage($"bottle rotation: {gameObject.transform.rotation.eulerAngles.z}");
-            if (gameObject.transform.localEulerAngles.z > 86.0f && gameObject.transform.localEulerAngles.z <= 170.0f)
+            if (gameObject.transform.localEulerAngles.z > 86.0f && gameObject.transform.localEulerAngles.z < 170.0f)
             {
-                liquidPouring.Play();
+                debugger.DisplayMessage("Pouring");
+                if (!liquidPouring.isPlaying)
+                {
+                    liquidPouring.Play();
+                }
             }
             else
             {
-                liquidPouring.Stop();
+                if (liquidPouring.isPlaying)
+                {
+                    liquidPouring.Stop();
+                }
             }
         }
     }
