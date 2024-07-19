@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6af57311f7c9446fae8acabfbbfdb412, type: 3}
-  m_Name: AudioAffordanceTheme
+  m_Name: AudioAffordanceTheme(funnel)
   m_EditorClassIdentifier: 
   m_Comments: 
   m_ReadOnly: 1
@@ -23,14 +23,14 @@ MonoBehaviour:
       stateEntered: {fileID: 0}
       stateExited: {fileID: 0}
     - stateName: hovered
-      stateEntered: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+      stateEntered: {fileID: 0}
       stateExited: {fileID: 0}
     - stateName: hoveredPriority
       stateEntered: {fileID: 0}
       stateExited: {fileID: 0}
     - stateName: selected
-      stateEntered: {fileID: 8300000, guid: 43c60955d84b6114eb6b396011e917e3, type: 3}
-      stateExited: {fileID: 8300000, guid: 5f391b37c6107c744b3be76b338aac28, type: 3}
+      stateEntered: {fileID: 8300000, guid: c6177084a9d252249accce6763b22972, type: 3}
+      stateExited: {fileID: 8300000, guid: 43c60955d84b6114eb6b396011e917e3, type: 3}
     - stateName: activated
-      stateEntered: {fileID: 8300000, guid: 43c60955d84b6114eb6b396011e917e3, type: 3}
-      stateExited: {fileID: 8300000, guid: 5f391b37c6107c744b3be76b338aac28, type: 3}
+      stateEntered: {fileID: 0}
+      stateExited: {fileID: 0}
