@@ -9,7 +9,10 @@ public class ReagentBottlePourScript : MonoBehaviour
     [SerializeField] XRSocketInteractor capSocket;
     [SerializeField] bool capAttached;
     [SerializeField] Debugger debugger;
+    [SerializeField] XRRayInteractor RightrayInteractor; //this is currently for the right controller (for now)
     // Start is called before the first frame update
+
+    Vector3 bottleRotation;
     void Start()
     {
         capAttached = false;
@@ -18,7 +21,8 @@ public class ReagentBottlePourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debugger.DisplayMessage($"bottle rotation: {gameObject.transform.localEulerAngles.z}");
+        
+        debugger.DisplayMessage($"ray rotation values: \n x = {RightrayInteractor.transform.eulerAngles.x} \n y = {RightrayInteractor.transform.eulerAngles.y} \n z = {RightrayInteractor.transform.eulerAngles.z}");
         if (!capAttached)
         {
             if (gameObject.transform.localEulerAngles.z > 86.0f && gameObject.transform.localEulerAngles.z < 170.0f)
