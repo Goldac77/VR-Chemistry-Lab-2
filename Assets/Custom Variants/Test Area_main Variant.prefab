@@ -38,7 +38,7 @@ Transform:
   - {fileID: 831067011320363376}
   - {fileID: 7144948605817972951}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &648497318104343269
 GameObject:
@@ -869,6 +869,7 @@ MonoBehaviour:
   volume: {fileID: 8158994883422645286}
   acidMaterial: {fileID: 2100000, guid: 601212b35d489ef48a1d77334c352597, type: 2}
   baseMaterial: {fileID: 2100000, guid: 52011cd95e613694a8c2893262274a22, type: 2}
+  funnelSnapped: 0
   isFilled: 0
 --- !u!1 &1397676877284027540
 GameObject:
@@ -11247,6 +11248,42 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4985974437903029905, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: m_TagString
+      value: reagent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.enter
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.inside
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.outside
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.colliderQueryMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[0]
+      value: 
+      objectReference: {fileID: 810649890716611512}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[1]
+      value: 
+      objectReference: {fileID: 1738225236828680013}
     - target: {fileID: 7075994365856210184, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -11310,6 +11347,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3239893147750859207, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2270110507234578976}
+    - targetCorrespondingSourceObject: {fileID: 4985974437903029905, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2396682813183153234}
   m_SourcePrefab: {fileID: 100100000, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
 --- !u!4 &465145943205893642 stripped
 Transform:
@@ -11332,6 +11372,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3209884817108677353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4985974437903029905, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+  m_PrefabInstance: {fileID: 7618525318538454136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2396682813183153234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209884817108677353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e79ff8c548e4da4b954a3391305c366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beakerSolution: {fileID: 920501407317904564}
+  buretteSolution: {fileID: 1397676877284027540}
+  beakerSolutionScript: {fileID: 6280756039415272562}
+  buretteScript: {fileID: 1230242289919023731}
+  reagentMaterial: {fileID: 2100000, guid: 81b7b15197224404390efb309709fef4, type: 2}
 --- !u!114 &4239062917400664323 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6011844987958820219, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
@@ -11511,6 +11573,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3117458065820464662, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: m_TagString
+      value: reagent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.enter
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.inside
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.outside
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.colliderQueryMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[0]
+      value: 
+      objectReference: {fileID: 810649890716611512}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[1]
+      value: 
+      objectReference: {fileID: 1738225236828680013}
     - target: {fileID: 8863646362735856645, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -11530,6 +11628,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4793161973492441408, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6601928213467925864}
+    - targetCorrespondingSourceObject: {fileID: 3117458065820464662, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3068934017992407262}
   m_SourcePrefab: {fileID: 100100000, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
 --- !u!1 &3306598849788523544 stripped
 GameObject:
@@ -11553,6 +11654,28 @@ MonoBehaviour:
   capAttached: 0
   debugger: {fileID: 7227202373524777335}
   RightrayInteractor: {fileID: 0}
+--- !u!1 &4910246108415320910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3117458065820464662, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+  m_PrefabInstance: {fileID: 8027628170384594264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3068934017992407262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4910246108415320910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e79ff8c548e4da4b954a3391305c366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beakerSolution: {fileID: 920501407317904564}
+  buretteSolution: {fileID: 1397676877284027540}
+  beakerSolutionScript: {fileID: 6280756039415272562}
+  buretteScript: {fileID: 1230242289919023731}
+  reagentMaterial: {fileID: 2100000, guid: 352cba83c9a933349930fd6f455b8080, type: 2}
 --- !u!198 &6061209929231767524 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}

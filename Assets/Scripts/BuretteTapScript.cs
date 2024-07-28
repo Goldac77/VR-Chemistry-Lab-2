@@ -21,7 +21,7 @@ public class BuretteTapScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(tapGrabbed)
+        if(tapGrabbed && beakerSolutionScript.isReacting)
         {
             float volume = buretteSolution.GetComponent<Renderer>().material.GetFloat("_Fill");
 
@@ -52,15 +52,21 @@ public class BuretteTapScript : MonoBehaviour
         main.startColor = buretteSolution.GetComponent<Renderer>().material.color;
         if(buretteScript.isFilled)
         {
-            if(beakerSolutionScript.indicatorAdded)
+            if(!buretteScript.funnelSnapped)
             {
-                liquidFlowing.Play();
-                beakerSolutionScript.isReacting = true;
+                if (beakerSolutionScript.indicatorAdded)
+                {
+                    liquidFlowing.Play();
+                    beakerSolutionScript.isReacting = true;
+                }
+                else
+                {
+                    Debug.Log("Add indicator first lol");
+                }
             } else
             {
-                Debug.Log("Add indicator first lol");
-            }
-            
+                Debug.Log("You need to remove the funnel");
+            }    
         } else
         {
             Debug.Log("I'm empty :/");

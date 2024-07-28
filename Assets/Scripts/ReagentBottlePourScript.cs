@@ -21,8 +21,8 @@ public class ReagentBottlePourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        debugger.DisplayMessage($"ray rotation values: \n x = {RightrayInteractor.transform.eulerAngles.x} \n y = {RightrayInteractor.transform.eulerAngles.y} \n z = {RightrayInteractor.transform.eulerAngles.z}");
+
+        debugger.DisplayMessage($"ray rotation values: \n x = {RightrayInteractor.transform.localEulerAngles.x} \n y = {RightrayInteractor.transform.localEulerAngles.y} \n z = {RightrayInteractor.transform.localEulerAngles.z}");
         if (!capAttached)
         {
             if (gameObject.transform.localEulerAngles.z > 86.0f && gameObject.transform.localEulerAngles.z < 170.0f)

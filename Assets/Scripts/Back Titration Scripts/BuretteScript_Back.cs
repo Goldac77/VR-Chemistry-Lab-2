@@ -20,7 +20,7 @@ public class BuretteScript_Back : MonoBehaviour
     [SerializeField] Material acidMaterial;
     [SerializeField] Material baseMaterial;
 
-    bool funnelSnapped;
+    public bool funnelSnapped;
     public bool isFilled;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,8 @@ public class BuretteScript_Back : MonoBehaviour
         funnelSnapped = false;
         isFilled = false;
         startingMaterial = buretteSolution.GetComponent<Renderer>().material; //this is the same material in pipetteSolution
+        acidMaterial.SetFloat("_Fill", 0.63f);
+        baseMaterial.SetFloat("_Fill", 0.63f);
     }
 
     // Update is called once per frame
@@ -62,6 +64,8 @@ public class BuretteScript_Back : MonoBehaviour
         
     }
 
+    //this function does nothing. Definitely remove later
+    //TODO: remove this later...
     private void OnTriggerEnter(Collider other)
     {
         if(funnelSnapped)

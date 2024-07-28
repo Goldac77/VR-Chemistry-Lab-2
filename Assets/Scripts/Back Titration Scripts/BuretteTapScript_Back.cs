@@ -52,14 +52,21 @@ public class BuretteTapScript_Back : MonoBehaviour
         main.startColor = buretteSolution.GetComponent<Renderer>().material.color;
         if(buretteScript_back.isFilled)
         {
-            if(beakerSolutionScript_back.indicatorAdded)
+            if(!buretteScript_back.funnelSnapped)
             {
-                liquidFlowing.Play();
-                beakerSolutionScript_back.isReacting = true;
+                if (beakerSolutionScript_back.indicatorAdded)
+                {
+                    liquidFlowing.Play();
+                    beakerSolutionScript_back.isReacting = true;
+                }
+                else
+                {
+                    Debug.Log("Add indicator first lol");
+                }
             } else
             {
-                Debug.Log("Add indicator first lol");
-            }
+                Debug.Log("You need to remove the funnel");
+            } 
             
         } else
         {
