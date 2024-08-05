@@ -11,8 +11,6 @@ public class BuretteScript : MonoBehaviour
     [SerializeField] GameObject buretteSolution;
     Material startingMaterial;
 
-    [SerializeField] PipetteScript pipetteScript;
-
     //Burette reading
     [SerializeField] TextMeshProUGUI volume;
 
@@ -66,36 +64,6 @@ public class BuretteScript : MonoBehaviour
             funnelSnapped = false;
         }
         
-    }
-
-
-    //this function does nothing. Definitely remove later
-    //TODO: remove this later...
-    private void OnTriggerEnter(Collider other)
-    {
-        if(funnelSnapped)
-        {
-            //allow filling burette
-            if(other.gameObject.tag == "pipette" && pipetteScript.solutionPicked && !isFilled)
-            {
-                acidMaterial.SetFloat("_Fill", 0.63f);
-                baseMaterial.SetFloat("_Fill", 0.63f);
-                switch(pipetteScript.pipetteSolution.GetComponent<Renderer>().material.name)
-                {
-                    case "HCL(pipette) (Instance) (Instance)":
-                        buretteSolution.GetComponent<Renderer>().material = acidMaterial;
-                        pipetteScript.pipetteSolution.GetComponent<Renderer>().material = startingMaterial;
-                        pipetteScript.solutionPicked = false;
-                        break;
-                    case "NaOH(pipette) (Instance) (Instance)":
-                        buretteSolution.GetComponent<Renderer>().material = baseMaterial;
-                        pipetteScript.pipetteSolution.GetComponent<Renderer>().material = startingMaterial;
-                        pipetteScript.solutionPicked = false;
-                        break;
-                }
-                isFilled = true;
-            }
-        }
     }
 
     float convertVolume(float volume)

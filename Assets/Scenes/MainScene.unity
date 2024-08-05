@@ -4702,10 +4702,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1687739115699407679, guid: fde17a20c644ee44da65e902ce82b423, type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 1109506017}
     - target: {fileID: 3382454685710450542, guid: fde17a20c644ee44da65e902ce82b423, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -4775,14 +4771,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Area_main
       objectReference: {fileID: 0}
-    - target: {fileID: 2270110507234578976, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
-      propertyPath: RightrayInteractor
+    - target: {fileID: 3403868267417203011, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403868267417203011, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4239062917400664323, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
       propertyPath: debugText
       value: 
       objectReference: {fileID: 321428290}
+    - target: {fileID: 6061209929231767524, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: TrailModule.mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6061209929231767524, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: TriggerModule.exit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6061209929231767524, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: TrailModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6061209929231767524, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: TrailModule.worldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6061209929231767524, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: TrailModule.textureMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6061209929231767524, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
+      propertyPath: TriggerModule.colliderQueryMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6224307741172443053, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -4826,10 +4850,6 @@ PrefabInstance:
     - target: {fileID: 6224307741172443053, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6601928213467925864, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
-      propertyPath: RightrayInteractor
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7227202373524777335, guid: 99854ee868e9ae94a9fef3d6aaaa4394, type: 3}
       propertyPath: debugText
