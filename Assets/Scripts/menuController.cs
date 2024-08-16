@@ -15,4 +15,23 @@ public class menuController : MonoBehaviour
     {
         SceneManager.LoadScene("BackTitration");
     }
+
+
+    //launches the mainmenu 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("start menu");
+    }
+
+    //code to restart the Main Menu scene
+    public void RestartMainScene()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    //restarts the Backtitration scene
+    public void RestartBackTitrationScene()
+    {
+        SceneManager.LoadScene("BackTitration");
+    }
 }
