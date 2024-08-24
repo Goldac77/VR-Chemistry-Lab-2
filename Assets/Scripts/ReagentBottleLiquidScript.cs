@@ -22,30 +22,24 @@ public class ReagentBottleLiquidScript : MonoBehaviour
         
     }
 
-    //Only detects beakerSolution; check particle system trigger module
     private void OnParticleTrigger()
     {
-        List<ParticleSystem.Particle> particleInside = new List<ParticleSystem.Particle>();
-        if(beakerSolutionScript.isFilled)
+        if (buretteScript.funnelSnapped && !beakerSolutionScript.isFilled)
         {
-            Debug.Log("can't add another solution to beakker");
-        } else
-        {
-            beakerSolution.GetComponent<Renderer>().material = reagentMaterial;
-        }
-        
-        Debug.Log(reagentParticleSystem.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, particleInside));
-
-        if(buretteScript.funnelSnapped)
-        {
-            if(buretteScript.isFilled)
+            //Possible bug?
+            //Filling the beaker when funnel is snapped will fill burette instead
+            if (buretteScript.isFilled)
             {
                 Debug.Log("burette is filled");
-            } else
+            }
+            else
             {
                 buretteSolution.GetComponent<Renderer>().material = reagentMaterial;
                 buretteScript.isFilled = true;
             }
+        } else
+        {
+            beakerSolution.GetComponent<Renderer>().material = reagentMaterial;
         }
     }
 }

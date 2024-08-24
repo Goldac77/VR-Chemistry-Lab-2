@@ -657,6 +657,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pause Menu Trigger",
+                    "type": "Button",
+                    "id": "2415da68-a5f7-48a2-8177-ac12864694d2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -811,6 +820,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Decrease Height",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95e4b1d6-f72a-451a-b2a0-ab1ad9b07f13",
+                    "path": "<XRController>{LeftHand}/{MenuButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Pause Menu Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

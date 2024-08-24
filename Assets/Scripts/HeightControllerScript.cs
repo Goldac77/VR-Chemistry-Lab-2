@@ -17,20 +17,27 @@ public class HeightControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialPosition = transform.position;
         playerHeight = initialPosition.y;
     }
 
     // Update is called once per frame
     void Update()
     {
+        initialPosition = transform.position;
+
         primaryButtonPressed = primaryButtonReference.action.triggered;
-        secondaryButtonPressed = secondaryButtonReference.action.IsPressed();
+        secondaryButtonPressed = secondaryButtonReference.action.triggered;
 
         if (primaryButtonPressed)
         {
-            pressed.Play();
-            playerHeight += 0.2f;
+            if(playerHeight + 0.2f > 1.60f)
+            {
+                playerHeight = 1.60f;
+            } else
+            {
+                playerHeight += 0.2f;
+                pressed.Play();
+            }
             UpdateHeight();
         }
         else if (secondaryButtonPressed)
@@ -38,12 +45,12 @@ public class HeightControllerScript : MonoBehaviour
             if (playerHeight - 0.2f > 0.0f)
             {
                 playerHeight -= 0.2f;
-                UpdateHeight();
             }
             else
             {
                 playerHeight = 0.0f;
             }
+            UpdateHeight();
         }
     }
 
