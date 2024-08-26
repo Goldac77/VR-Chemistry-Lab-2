@@ -58,6 +58,9 @@ public class BuretteScript_Back : MonoBehaviour
         if(objectInSocket != null && objectInSocket.transform.tag == "funnel")
         {
             funnelSnapped = true;
+        } else
+        {
+            funnelSnapped = false;
         }
         
     }

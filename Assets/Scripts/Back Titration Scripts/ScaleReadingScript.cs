@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -9,26 +10,35 @@ public class ScaleReadingScript : MonoBehaviour
     //and sends that data to TextMeshProGUI
 
     [SerializeField] TextMeshProUGUI massText;
+    List<float> scaleObjects = new List<float>();
 
     private void Start()
     {
         massText.text = "0kg";
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        List<string> scaleObjects = null;
         //Debug.Log(other.gameObject.name);
-        scaleObjects.Add(other.gameObject.name);
-
-        for(int i = 0; i < scaleObjects.Count; i++)
+        if(other.gameObject.tag == "soluble")
         {
-            Debug.Log(scaleObjects[i]);
+            scaleObjects.Add(other.gameObject.GetComponent<Rigidbody>().mass);
         }
+
+        massText.text = scaleObjects.Sum().ToString();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        massText.text = "0kg";
+        if(other.gameObject.tag == "soluble")
+        {
+            scaleObjects.Remove(other.gameObject.GetComponent<Rigidbody>().mass);
+            massText.text = scaleObjects.Sum().ToString();
+        }
+
+        if(scaleObjects.Count <= 0)
+        {
+            massText.text = "0kg";
+        }
     }
 }

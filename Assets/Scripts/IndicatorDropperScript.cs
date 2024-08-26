@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class IndicatorDropperScript : MonoBehaviour
 {
@@ -40,6 +41,6 @@ public class IndicatorDropperScript : MonoBehaviour
     private void Update()
     {
         //always move dropper with bottle
-        transform.position = dropperPosition.transform.position;
+        //transform.position = dropperPosition.transform.position;
     }
 }

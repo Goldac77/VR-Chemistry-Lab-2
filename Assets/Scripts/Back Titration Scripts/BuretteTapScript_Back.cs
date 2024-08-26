@@ -21,7 +21,7 @@ public class BuretteTapScript_Back : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(tapGrabbed)
+        if(tapGrabbed && beakerSolutionScript_back.isReacting)
         {
             float volume = buretteSolution.GetComponent<Renderer>().material.GetFloat("_Fill");
 

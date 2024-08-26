@@ -38,6 +38,6 @@ public class IndicatorBottleScript : MonoBehaviour
             dropper.transform.parent = dropperScript.dropperParent;
         }
         //bug fix?
-        dropper.transform.rotation = dropperScript.dropperParent.rotation;
+        //dropper.transform.rotation = dropperScript.dropperParent.rotation;
     }
 }
