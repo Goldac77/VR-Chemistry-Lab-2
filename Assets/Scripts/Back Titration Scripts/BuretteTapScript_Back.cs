@@ -1,3 +1,4 @@
+using LiquidVolumeFX;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,12 @@ using UnityEngine;
 public class BuretteTapScript_Back : MonoBehaviour
 {
     [SerializeField] ParticleSystem liquidFlowing;
-    [SerializeField] GameObject buretteSolution;
 
     [SerializeField] BuretteScript_Back buretteScript_back;
 
     [SerializeField] BeakerSolutionScript_Back beakerSolutionScript_back;
+
+    [SerializeField] LiquidVolume buretteSolutionScript_Back;
 
     bool tapGrabbed;
 
@@ -23,25 +25,25 @@ public class BuretteTapScript_Back : MonoBehaviour
     {
         if(tapGrabbed && beakerSolutionScript_back.isReacting)
         {
-            float volume = buretteSolution.GetComponent<Renderer>().material.GetFloat("_Fill");
+            float volume = buretteSolutionScript_Back.level;
 
             //reduce volume of burette solution
-            if(volume > 0.42f && volume <= 0.63f)
+            if(volume > 0.0f && volume <= 1.0f)
             {
                 volume -= 0.02f * Time.deltaTime;
 
                 //edge case bug fix, not ideal lol
-                if(volume < 0.42f)
+                if(volume < 0.0f)
                 {
-                    volume = 0.42f;
+                    volume = 0.0f;
                     liquidFlowing.Stop();
                 }
             } else
             {
                 buretteScript_back.isFilled = false;
             }
-            
-            buretteSolution.GetComponent<Renderer>().material.SetFloat("_Fill", volume);
+
+            buretteSolutionScript_Back.level = volume;
         }
     }
 
@@ -49,7 +51,7 @@ public class BuretteTapScript_Back : MonoBehaviour
     {
         //get the material of the liquid in the burette and apply to particle system
         var main = liquidFlowing.main;
-        main.startColor = buretteSolution.GetComponent<Renderer>().material.color;
+        main.startColor = buretteSolutionScript_Back.liquidColor1;
         if(buretteScript_back.isFilled)
         {
             if(!buretteScript_back.funnelSnapped)

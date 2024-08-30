@@ -1,3 +1,4 @@
+using LiquidVolumeFX;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,15 +9,12 @@ public class BuretteScript : MonoBehaviour
 {
     //Burette Objects
     [SerializeField] XRSocketInteractor socketInteractor;
-    [SerializeField] GameObject buretteSolution;
-    Material startingMaterial;
 
     //Burette reading
     [SerializeField] TextMeshProUGUI volume;
 
-    //burette solution materials
-    [SerializeField] Material acidMaterial;
-    [SerializeField] Material baseMaterial;
+    //burette solution
+    [SerializeField] LiquidVolume buretteLiquidScript;
 
     public bool funnelSnapped;
     public bool isFilled;
@@ -25,29 +23,25 @@ public class BuretteScript : MonoBehaviour
     {
         funnelSnapped = false;
         isFilled = false;
-        startingMaterial = buretteSolution.GetComponent<Renderer>().material; //this is the same material in pipetteSolution
-        acidMaterial.SetFloat("_Fill", 0.63f);
-        baseMaterial.SetFloat("_Fill", 0.63f);
+        buretteLiquidScript.level = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
         checkObjectInSocket();
-        //TODO: get currentLiquidMaterial only once, when isFilled changes
-        Material currentLiquidMaterial = buretteSolution.GetComponent<Renderer>().material;
-        if(currentLiquidMaterial != startingMaterial)
+        if (buretteLiquidScript.level != 0.0f)
         {
-            displayVolume(currentLiquidMaterial);
+            displayVolume();
         } else
         {
             volume.text = "0ml";
         }
     }
 
-    void displayVolume(Material x)
+    void displayVolume()
     {
-        float fillAmount = x.GetFloat("_Fill");
+        float fillAmount = buretteLiquidScript.level;
         fillAmount = convertVolume(fillAmount);
         volume.text = fillAmount.ToString() + "ml";
     }
@@ -68,8 +62,8 @@ public class BuretteScript : MonoBehaviour
 
     float convertVolume(float volume)
     {
-        float minVolume = 0.42f;
-        float maxVolume = 0.63f;
+        float minVolume = 0.0f;
+        float maxVolume = 1.0f;
         float scaleFactor = 50f / (maxVolume - minVolume);
 
         return Mathf.Floor(scaleFactor * (volume - minVolume));

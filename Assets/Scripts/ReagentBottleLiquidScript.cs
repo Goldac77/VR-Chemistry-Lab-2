@@ -1,19 +1,25 @@
+using LiquidVolumeFX;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ReagentBottleLiquidScript : MonoBehaviour
 {
-    [SerializeField] GameObject beakerSolution;
-    [SerializeField] GameObject buretteSolution;
     [SerializeField] BeakerSolutionScript beakerSolutionScript;
     [SerializeField] BuretteScript buretteScript;
-    [SerializeField] Material reagentMaterial;
-    ParticleSystem reagentParticleSystem;
+
+    [SerializeField] Color acidColor;
+    [SerializeField] Color baseColor;
+
+    [SerializeField] bool isAcid;
+    [SerializeField] bool isBase;
+
+    [SerializeField] LiquidVolume buretteLiquidScript;
+    [SerializeField] LiquidVolume conicalFlaskLiquidScript;
     // Start is called before the first frame update
     void Start()
     {
-        reagentParticleSystem = GetComponent<ParticleSystem>();
+
     }
 
     // Update is called once per frame
@@ -24,22 +30,52 @@ public class ReagentBottleLiquidScript : MonoBehaviour
 
     private void OnParticleTrigger()
     {
-        if (buretteScript.funnelSnapped && !beakerSolutionScript.isFilled)
+        if (buretteScript.funnelSnapped)
         {
             //Possible bug?
-            //Filling the beaker when funnel is snapped will fill burette instead
+            //The logic here has a LOT of issues, and edge cases that need to be fixed
             if (buretteScript.isFilled)
             {
                 Debug.Log("burette is filled");
+            } 
+            else if(!beakerSolutionScript.isFilled)
+            {
+                //do nothing
             }
             else
             {
-                buretteSolution.GetComponent<Renderer>().material = reagentMaterial;
+                if(isAcid)
+                {
+                    buretteLiquidScript.liquidColor1 = acidColor;
+                } else
+                {
+                    buretteLiquidScript.liquidColor1 = baseColor;
+                }
+                buretteLiquidScript.level = 1.0f;
                 buretteScript.isFilled = true;
             }
         } else
         {
-            beakerSolution.GetComponent<Renderer>().material = reagentMaterial;
+            if(beakerSolutionScript.isFilled)
+            {
+                Debug.Log("Conical flask filled");
+            } else
+            {
+                if(!buretteScript.funnelSnapped)
+                {
+                    conicalFlaskLiquidScript.level = 0.36f;
+                    if (isAcid)
+                    {
+                        conicalFlaskLiquidScript.liquidColor1 = acidColor;
+                        beakerSolutionScript.isAcidFilled = true;
+                    }
+                    else
+                    {
+                        conicalFlaskLiquidScript.liquidColor1 = baseColor;
+                        beakerSolutionScript.isBaseFilled = true;
+                    }
+                }
+            } 
         }
     }
 }

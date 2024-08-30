@@ -1,3 +1,4 @@
+using LiquidVolumeFX;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,27 +14,28 @@ public class BeakerSolutionScript : MonoBehaviour
     [SerializeField] Color endPointColorAcid;
     [SerializeField] Color endPointColorBase;
 
-    Material currentMaterial;
-
     public bool isReacting;
     public bool indicatorAdded;
 
+    [SerializeField] LiquidVolume conicalFlaskLiquidScript;
+
     float count = 0;
+
+    [HideInInspector] public bool isAcidFilled;
+    [HideInInspector] public bool isBaseFilled;
     // Start is called before the first frame update
     void Start()
     {
         isFilled = false;
         isReacting = false;
         indicatorAdded = false;
-        startingMaterial = GetComponent<Renderer>().material;
+        conicalFlaskLiquidScript.level = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentMaterial = GetComponent<Renderer>().material;
-
-        if (currentMaterial != startingMaterial)
+        if (conicalFlaskLiquidScript.level != 0)
         {
             isFilled = true;
         }
@@ -47,28 +49,28 @@ public class BeakerSolutionScript : MonoBehaviour
             //NOTE: it takes 10.5 seconds for the burette to be empty
             count += Time.deltaTime;
 
-            if (currentMaterial.name == "HCL(pipette) (Instance)") //if acid fills beaker
+            if (isAcidFilled) //if acid fills beaker
             {
                 if (count >= 8)
                 {
-                    currentMaterial.color = endPointColorAcid;
+                    conicalFlaskLiquidScript.liquidColor1 = endPointColorAcid;
                 }
                 else if (count > 4 && count < 5) //this logic sucks lol...
                 {
                     //temporary color change
-                    currentMaterial.color = endPointColorAcid;
+                    conicalFlaskLiquidScript.liquidColor1 = endPointColorAcid;
                     Invoke("ReturnColorAcid", 2f);
                 }
-            } else if(currentMaterial.name == "NaOH(pipette) (Instance)")
+            } else if(isBaseFilled)
             {
                 if (count >= 8)
                 {
-                    currentMaterial.color = endPointColorBase;
+                    conicalFlaskLiquidScript.liquidColor1 = endPointColorBase;
                 }
                 else if (count > 4 && count < 5) //this logic sucks lol...
                 {
                     //temporary color change
-                    currentMaterial.color = endPointColorBase;
+                    conicalFlaskLiquidScript.liquidColor1 = endPointColorBase;
                     Invoke("ReturnColorBase", 2f);
                 }
             }
@@ -82,13 +84,13 @@ public class BeakerSolutionScript : MonoBehaviour
         {
             if(isFilled)
             {
-                if(currentMaterial.name == "HCL(pipette) (Instance)")
+                if(isAcidFilled)
                 {
-                    currentMaterial.color = indicatorColorAcid;
+                    conicalFlaskLiquidScript.liquidColor1 = indicatorColorAcid;
                     indicatorAdded = true;
-                } else if (currentMaterial.name == "NaOH(pipette) (Instance)")
+                } else if (isBaseFilled)
                 {
-                    currentMaterial.color = indicatorColorBase;
+                    conicalFlaskLiquidScript.liquidColor1 = indicatorColorBase;
                     indicatorAdded = true;
                 } 
             }
@@ -98,12 +100,12 @@ public class BeakerSolutionScript : MonoBehaviour
     //return to indicator color in acid
     private void ReturnColorAcid()
     {
-        currentMaterial.color = indicatorColorAcid;
+        conicalFlaskLiquidScript.liquidColor1 = indicatorColorAcid;
     }
 
     //return to indicator color in bas
     private void ReturnColorBase()
     {
-        currentMaterial.color = indicatorColorBase;
+        conicalFlaskLiquidScript.liquidColor1 = indicatorColorBase;
     }
 }
