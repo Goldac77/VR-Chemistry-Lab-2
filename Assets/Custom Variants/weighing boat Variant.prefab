@@ -80,6 +80,9 @@ PrefabInstance:
       addedObject: {fileID: 8222407081839358335}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9abfbe262ad983445884a8ca9ea7849c, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7985151214266513400}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9abfbe262ad983445884a8ca9ea7849c, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 8268824896856385839}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9abfbe262ad983445884a8ca9ea7849c, type: 3}
       insertIndex: -1
@@ -278,10 +281,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7985151214266513400}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7985151214266513400}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -392,6 +419,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &7985151214266513400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8061572426939063545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15cf9e349b9fe140a84993bb3b827d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
 --- !u!114 &8268824896856385839
 MonoBehaviour:
   m_ObjectHideFlags: 0

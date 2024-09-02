@@ -28,10 +28,10 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 1
           inSlope: 0
           outSlope: 0
-          tangentMode: 0
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
           value: 1
           inSlope: 0
           outSlope: 0
-          tangentMode: 0
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0
@@ -50,22 +50,25 @@ MonoBehaviour:
       m_Variable: {fileID: 0}
     m_List:
     - stateName: disabled
-      animationStateStartValue: {r: 0.76470596, g: 0.7843138, b: 0.8117648, a: 0.60784316}
+      animationStateStartValue: {r: 1, g: 0, b: 0.19551277, a: 1}
       animationStateEndValue: {r: 0.76470596, g: 0.7843138, b: 0.8117648, a: 0.60784316}
     - stateName: idle
       animationStateStartValue: {r: 0.90196085, g: 0.90196085, b: 0.90196085, a: 0}
       animationStateEndValue: {r: 0.90196085, g: 0.90196085, b: 0.90196085, a: 0}
     - stateName: hovered
-      animationStateStartValue: {r: 0.2509804, g: 0.7019608, b: 0.90196085, a: 1}
-      animationStateEndValue: {r: 0, g: 0.627451, b: 1, a: 1}
+      animationStateStartValue: {r: 0, g: 1, b: 0.2333653, a: 1}
+      animationStateEndValue: {r: 0, g: 1, b: 0.15248537, a: 1}
     - stateName: hoveredPriority
       animationStateStartValue: {r: 0.2509804, g: 0.7019608, b: 0.90196085, a: 1}
       animationStateEndValue: {r: 0, g: 0.627451, b: 1, a: 1}
     - stateName: selected
-      animationStateStartValue: {r: 0, g: 0.627451, b: 1, a: 1}
-      animationStateEndValue: {r: 1, g: 0.40000004, b: 0, a: 1}
+      animationStateStartValue: {r: 0.2509804, g: 0.7019608, b: 0.9019608, a: 1}
+      animationStateEndValue: {r: 0, g: 0.627451, b: 1, a: 1}
     - stateName: activated
       animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
       animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
+    - stateName: focused
+      animationStateStartValue: {r: 0.90196085, g: 0.90196085, b: 0.90196085, a: 0}
+      animationStateEndValue: {r: 0.90196085, g: 0.90196085, b: 0.90196085, a: 0}
     m_ColorBlendMode: 0
     m_BlendAmount: 1

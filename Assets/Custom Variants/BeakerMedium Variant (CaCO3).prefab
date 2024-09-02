@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6117938612405568380}
   - component: {fileID: 2720763771059872473}
   - component: {fileID: 2912443755821989204}
+  - component: {fileID: 5215053343635164700}
   m_Layer: 0
   m_Name: chip (4)
   m_TagString: soluble
@@ -173,10 +174,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5215053343635164700}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5215053343635164700}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -300,6 +325,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weighingBoat: {fileID: 0}
+--- !u!114 &5215053343635164700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332367454889882891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15cf9e349b9fe140a84993bb3b827d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
 --- !u!1 &1159755146306964203
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +353,7 @@ GameObject:
   - component: {fileID: 3127462121001975840}
   - component: {fileID: 9188908954205084873}
   - component: {fileID: 1263409457951623240}
+  - component: {fileID: 2405894205703172189}
   m_Layer: 0
   m_Name: chip (3)
   m_TagString: soluble
@@ -473,10 +512,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2405894205703172189}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2405894205703172189}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -600,6 +663,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weighingBoat: {fileID: 0}
+--- !u!114 &2405894205703172189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159755146306964203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15cf9e349b9fe140a84993bb3b827d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
 --- !u!1 &3327015386509668040
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +691,7 @@ GameObject:
   - component: {fileID: 1829221580526215206}
   - component: {fileID: 2625366534919429526}
   - component: {fileID: 3092071124763917192}
+  - component: {fileID: 3207634557326971268}
   m_Layer: 0
   m_Name: chip (2)
   m_TagString: soluble
@@ -773,10 +850,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3207634557326971268}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3207634557326971268}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -900,6 +1001,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weighingBoat: {fileID: 0}
+--- !u!114 &3207634557326971268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327015386509668040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15cf9e349b9fe140a84993bb3b827d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
 --- !u!1 &5387480231847157974
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +1029,7 @@ GameObject:
   - component: {fileID: 3460671241616113781}
   - component: {fileID: 2525433339690534341}
   - component: {fileID: 6997850680138578720}
+  - component: {fileID: 8956071434500820664}
   m_Layer: 0
   m_Name: chip
   m_TagString: soluble
@@ -1073,10 +1188,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8956071434500820664}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8956071434500820664}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1200,6 +1339,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weighingBoat: {fileID: 0}
+--- !u!114 &8956071434500820664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5387480231847157974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15cf9e349b9fe140a84993bb3b827d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
 --- !u!1 &6803009857988185372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1367,7 @@ GameObject:
   - component: {fileID: 8835899665217388320}
   - component: {fileID: 1344769623880592292}
   - component: {fileID: 2900692063255227359}
+  - component: {fileID: 8960322697523045130}
   m_Layer: 0
   m_Name: chip (1)
   m_TagString: soluble
@@ -1373,10 +1526,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8960322697523045130}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8960322697523045130}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1500,6 +1677,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weighingBoat: {fileID: 0}
+--- !u!114 &8960322697523045130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6803009857988185372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15cf9e349b9fe140a84993bb3b827d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
 --- !u!1 &8459741689946754535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1705,7 @@ GameObject:
   - component: {fileID: 7316460612678335111}
   - component: {fileID: 207965725536320854}
   - component: {fileID: 1373066286477498274}
+  - component: {fileID: 752012226265706346}
   m_Layer: 0
   m_Name: chip (5)
   m_TagString: soluble
@@ -1673,10 +1864,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 752012226265706346}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 752012226265706346}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1800,6 +2015,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weighingBoat: {fileID: 0}
+--- !u!114 &752012226265706346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459741689946754535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15cf9e349b9fe140a84993bb3b827d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
 --- !u!1001 &4595475564766415724
 PrefabInstance:
   m_ObjectHideFlags: 0

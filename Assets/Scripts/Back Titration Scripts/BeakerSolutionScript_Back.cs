@@ -18,8 +18,6 @@ public class BeakerSolutionScript_Back : MonoBehaviour
     [SerializeField] Color lowSolubleColor;
     [SerializeField] Color highSolubleColor;
 
-    Material currentMaterial;
-
     [SerializeField] LiquidVolume conicalFlaskLiquidScript_Back;
 
     //State Managers
@@ -43,6 +41,7 @@ public class BeakerSolutionScript_Back : MonoBehaviour
         lowSoluble = false;
         highSoluble = false;
         conicalFlaskLiquidScript_Back.level = 0;
+        gameObject.GetComponent<Renderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -50,6 +49,7 @@ public class BeakerSolutionScript_Back : MonoBehaviour
     {
         if (conicalFlaskLiquidScript_Back.level != 0)
         {
+            gameObject.GetComponent<Renderer>().enabled = true;
             isFilled = true;
         }
         else

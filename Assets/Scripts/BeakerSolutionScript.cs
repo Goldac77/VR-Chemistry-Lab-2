@@ -6,7 +6,6 @@ using UnityEngine;
 public class BeakerSolutionScript : MonoBehaviour
 {
     public bool isFilled;
-    Material startingMaterial;
 
     //colour changes
     [SerializeField] Color indicatorColorAcid;
@@ -30,6 +29,7 @@ public class BeakerSolutionScript : MonoBehaviour
         isReacting = false;
         indicatorAdded = false;
         conicalFlaskLiquidScript.level = 0;
+        gameObject.GetComponent<Renderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class BeakerSolutionScript : MonoBehaviour
     {
         if (conicalFlaskLiquidScript.level != 0)
         {
+            gameObject.GetComponent<Renderer>().enabled = true;
             isFilled = true;
         }
         else
