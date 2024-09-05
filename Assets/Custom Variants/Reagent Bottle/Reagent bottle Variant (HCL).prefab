@@ -219,9 +219,9 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
+  m_MatchAttachRotation: 0
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15cf9e349b9fe140a84993bb3b827d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1997370082546808912
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +312,7 @@ GameObject:
   - component: {fileID: 9117423068687341343}
   - component: {fileID: 4113227697815535364}
   - component: {fileID: 8594171804879607966}
+  - component: {fileID: 7238400381134009613}
   m_Layer: 0
   m_Name: capAttach
   m_TagString: Untagged
@@ -379,10 +381,34 @@ MonoBehaviour:
   m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7238400381134009613}
+        m_TargetAssemblyTypeName: SocketCheckScript, Assembly-CSharp
+        m_MethodName: HoveringEnterSocket
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7238400381134009613}
+        m_TargetAssemblyTypeName: SocketCheckScript, Assembly-CSharp
+        m_MethodName: HoveringExitSocket
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -414,6 +440,19 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &7238400381134009613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997370082546808912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494775c1efa59664c8ddfdcce370943d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedObject: {fileID: 884884145656049572}
 --- !u!1 &2132869531202866856
 GameObject:
   m_ObjectHideFlags: 0

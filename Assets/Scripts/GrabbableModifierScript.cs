@@ -32,4 +32,14 @@ public class GrabbableModifierScript : MonoBehaviour
     {
         grabbableObject.GetComponent<Renderer>().material.color = defaultColor;
     }
+
+    public void OnGrabbed()
+    {
+        grabbableObject.GetComponent<Renderer>().material.color = hoverColor;
+    }
+
+    public void OnGrabExited()
+    {
+        grabbableObject.GetComponent<Renderer>().material.color = defaultColor;
+    }
 }
