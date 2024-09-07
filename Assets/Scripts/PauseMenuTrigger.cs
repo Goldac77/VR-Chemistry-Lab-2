@@ -12,6 +12,8 @@ public class PauseMenuTrigger : MonoBehaviour
 
     [SerializeField] GameObject leftRayInteractor;
     [SerializeField] GameObject rightRayInteractor;
+
+    [SerializeField] GameObject ControlCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,16 @@ public class PauseMenuTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(ControlCanvas.activeInHierarchy)
+        {
+            leftRayInteractor.SetActive(true);
+            rightRayInteractor.SetActive(true);
+        } else
+        {
+            leftRayInteractor.SetActive(false);
+            rightRayInteractor.SetActive(false);
+        }
+
         if(pauseMenu.action.triggered)
         {
             if(!pauseMenuCanvas.activeInHierarchy)
