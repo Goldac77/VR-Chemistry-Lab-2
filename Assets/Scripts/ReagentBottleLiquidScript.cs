@@ -16,6 +16,8 @@ public class ReagentBottleLiquidScript : MonoBehaviour
 
     [SerializeField] LiquidVolume buretteLiquidScript;
     [SerializeField] LiquidVolume conicalFlaskLiquidScript;
+
+    [SerializeField] float fillRate;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,7 @@ public class ReagentBottleLiquidScript : MonoBehaviour
                 {
                     buretteLiquidScript.liquidColor1 = baseColor;
                 }
-                buretteLiquidScript.level = 1.0f;
+                StartCoroutine(FillBurette());
                 buretteScript.isFilled = true;
             }
         } else
@@ -63,7 +65,7 @@ public class ReagentBottleLiquidScript : MonoBehaviour
             {
                 if(!buretteScript.funnelSnapped)
                 {
-                    conicalFlaskLiquidScript.level = 0.36f;
+                    StartCoroutine(FillConicalFlask());
                     if (isAcid)
                     {
                         conicalFlaskLiquidScript.liquidColor1 = acidColor;
@@ -76,6 +78,32 @@ public class ReagentBottleLiquidScript : MonoBehaviour
                     }
                 }
             } 
+        }
+    }
+
+    IEnumerator FillBurette()
+    {
+        float volume = buretteLiquidScript.level;
+        float maxFill = 1.0f;
+        while(volume < maxFill)
+        {
+            volume += fillRate * Time.deltaTime;
+            volume = Mathf.Min(volume, fillRate);
+            buretteLiquidScript.level = volume;
+            yield return null;
+        }
+    }
+
+    IEnumerator FillConicalFlask()
+    {
+        float volume = conicalFlaskLiquidScript.level;
+        float maxFill = 0.36f;
+        while(volume < maxFill)
+        {
+            volume += fillRate * Time.deltaTime;
+            volume = Mathf.Min(volume, maxFill);
+            conicalFlaskLiquidScript.level = volume;
+            yield return null;
         }
     }
 }

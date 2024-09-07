@@ -458,6 +458,7 @@ MonoBehaviour:
   buretteScript: {fileID: 1230242289919023731}
   beakerSolutionScript: {fileID: 1041056271343726767}
   buretteLiquidScript: {fileID: 704507653032672690}
+  flowRate: 0.04
 --- !u!114 &5148206023409898113
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class BuretteTapScript_Back : MonoBehaviour
 
     bool tapGrabbed;
 
+    [SerializeField] float flowRate;
+
     private void Start()
     {
         tapGrabbed = false;
@@ -30,7 +32,7 @@ public class BuretteTapScript_Back : MonoBehaviour
             //reduce volume of burette solution
             if(volume > 0.0f && volume <= 1.0f)
             {
-                volume -= 0.02f * Time.deltaTime;
+                volume -= flowRate * Time.deltaTime;
 
                 //edge case bug fix, not ideal lol
                 if(volume < 0.0f)

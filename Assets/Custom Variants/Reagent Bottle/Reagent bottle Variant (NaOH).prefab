@@ -5188,11 +5188,12 @@ MonoBehaviour:
   beakerSolutionScript: {fileID: 0}
   buretteScript: {fileID: 0}
   acidColor: {r: 0, g: 0, b: 0, a: 0}
-  baseColor: {r: 0, g: 0, b: 0, a: 0}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
   isAcid: 0
   isBase: 0
   buretteLiquidScript: {fileID: 0}
   conicalFlaskLiquidScript: {fileID: 0}
+  fillRate: 0.1
 --- !u!1 &4793161973492441408
 GameObject:
   m_ObjectHideFlags: 0

@@ -8757,6 +8757,7 @@ MonoBehaviour:
   buretteScript_back: {fileID: 1274836584211624536}
   beakerSolutionScript_back: {fileID: 7974972019220145392}
   buretteSolutionScript_Back: {fileID: 4795970196290088835}
+  flowRate: 0.04
 --- !u!114 &7254722041977912374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9985,9 +9986,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3239893147750859207, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7320128397701666534}
-    - targetCorrespondingSourceObject: {fileID: 4985974437903029905, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2396682813183153234}
   m_SourcePrefab: {fileID: 100100000, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
 --- !u!4 &465145943205893642 stripped
 Transform:
@@ -10010,31 +10008,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3209884817108677353 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4985974437903029905, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
-  m_PrefabInstance: {fileID: 7618525318538454136}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2396682813183153234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3209884817108677353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e79ff8c548e4da4b954a3391305c366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beakerSolutionScript: {fileID: 0}
-  buretteScript: {fileID: 0}
-  acidColor: {r: 0, g: 0, b: 0, a: 0}
-  baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAcid: 0
-  isBase: 0
-  buretteLiquidScript: {fileID: 0}
-  conicalFlaskLiquidScript: {fileID: 0}
 --- !u!114 &4239062917400664323 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6011844987958820219, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
@@ -10428,9 +10401,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4793161973492441408, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
       insertIndex: -1
       addedObject: {fileID: 976975472269406859}
-    - targetCorrespondingSourceObject: {fileID: 3117458065820464662, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3068934017992407262}
   m_SourcePrefab: {fileID: 100100000, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
 --- !u!1 &3306598849788523544 stripped
 GameObject:
@@ -10466,31 +10436,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
---- !u!1 &4910246108415320910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3117458065820464662, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
-  m_PrefabInstance: {fileID: 8027628170384594264}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3068934017992407262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4910246108415320910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e79ff8c548e4da4b954a3391305c366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beakerSolutionScript: {fileID: 0}
-  buretteScript: {fileID: 0}
-  acidColor: {r: 0, g: 0, b: 0, a: 0}
-  baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAcid: 0
-  isBase: 0
-  buretteLiquidScript: {fileID: 0}
-  conicalFlaskLiquidScript: {fileID: 0}
 --- !u!198 &6061209929231767524 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
