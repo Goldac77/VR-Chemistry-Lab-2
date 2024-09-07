@@ -54,7 +54,6 @@ public class ReagentBottleLiquidScript : MonoBehaviour
                     buretteLiquidScript.liquidColor1 = baseColor;
                 }
                 StartCoroutine(FillBurette());
-                buretteScript.isFilled = true;
             }
         } else
         {
@@ -88,7 +87,7 @@ public class ReagentBottleLiquidScript : MonoBehaviour
         while(volume < maxFill)
         {
             volume += fillRate * Time.deltaTime;
-            volume = Mathf.Min(volume, fillRate);
+            volume = Mathf.Min(volume, maxFill);
             buretteLiquidScript.level = volume;
             yield return null;
         }

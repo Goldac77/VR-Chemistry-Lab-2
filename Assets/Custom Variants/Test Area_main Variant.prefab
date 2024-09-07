@@ -676,6 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowedObject: {fileID: 7134643091639062886}
+  reagentBottlePourScript: {fileID: 0}
 --- !u!1 &1392942729066624503
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +800,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397676877284027540}
-  m_Mesh: {fileID: 4300000, guid: ce52017ec71596940b9b491c9a4974e3, type: 2}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &5212931562361507487
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -904,7 +905,7 @@ MonoBehaviour:
   _sparklingIntensity: 0.1
   _sparklingAmount: 0.2
   _deepObscurance: 0
-  _foamColor: {r: 1, g: 1, b: 1, a: 0.65}
+  _foamColor: {r: 1, g: 1, b: 1, a: 0}
   _foamScale: 0.2
   _foamThickness: 0.04
   _foamDensity: 0.5

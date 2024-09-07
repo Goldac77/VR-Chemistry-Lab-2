@@ -9,6 +9,8 @@ public class ReagentBottlePourScript : MonoBehaviour
     [SerializeField] XRSocketInteractor capSocket;
     [SerializeField] bool capAttached;
     [SerializeField] Debugger debugger;
+
+    [HideInInspector] public bool grabbed;
     // Start is called before the first frame update
 
     Vector3 bottleRotation;
@@ -43,6 +45,12 @@ public class ReagentBottlePourScript : MonoBehaviour
     public void OnGrabbed()
     {
         CheckObjectInSocket();
+        grabbed = true;
+    }
+
+    public void OnGrabExited()
+    {
+        grabbed = false;
     }
 
     private void CheckObjectInSocket()

@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowedObject: {fileID: 7134643091639062886}
+  reagentBottlePourScript: {fileID: 0}
 --- !u!1 &1682304536239120041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1399,7 @@ MonoBehaviour:
   _sparklingIntensity: 0.1
   _sparklingAmount: 0.2
   _deepObscurance: 0
-  _foamColor: {r: 1, g: 1, b: 1, a: 0.65}
+  _foamColor: {r: 1, g: 1, b: 1, a: 0}
   _foamScale: 0.2
   _foamThickness: 0.04
   _foamDensity: 0.5
@@ -10045,6 +10046,7 @@ MonoBehaviour:
   capSocket: {fileID: 2233453159111146726}
   capAttached: 0
   debugger: {fileID: 4239062917400664323}
+  grabbed: 0
 --- !u!114 &7320128397701666534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10423,6 +10425,7 @@ MonoBehaviour:
   capSocket: {fileID: 8525787148571602241}
   capAttached: 0
   debugger: {fileID: 7227202373524777335}
+  grabbed: 0
 --- !u!114 &976975472269406859
 MonoBehaviour:
   m_ObjectHideFlags: 0

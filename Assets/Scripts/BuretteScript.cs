@@ -32,11 +32,18 @@ public class BuretteScript : MonoBehaviour
         checkObjectInSocket();
         if (buretteLiquidScript.level != 0.0f)
         {
-            buretteLiquidScript.level = 1.0f;
             displayVolume();
         } else
         {
             volume.text = "0ml";
+        }
+
+        if(buretteLiquidScript.level == 1.0f)
+        {
+            isFilled = true;
+        } else
+        {
+            isFilled = false;
         }
     }
 

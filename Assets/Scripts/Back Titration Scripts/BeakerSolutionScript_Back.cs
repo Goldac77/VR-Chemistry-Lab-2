@@ -32,6 +32,8 @@ public class BeakerSolutionScript_Back : MonoBehaviour
     [HideInInspector] public bool isAcidFilled;
     [HideInInspector] public bool isBaseFilled;
 
+    Renderer solutionRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,15 +43,22 @@ public class BeakerSolutionScript_Back : MonoBehaviour
         lowSoluble = false;
         highSoluble = false;
         conicalFlaskLiquidScript_Back.level = 0;
-        gameObject.GetComponent<Renderer>().enabled = false;
+        solutionRenderer = GetComponent<Renderer>();
+        solutionRenderer.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (conicalFlaskLiquidScript_Back.level != 0)
+        if (conicalFlaskLiquidScript_Back.level > 0)
         {
-            gameObject.GetComponent<Renderer>().enabled = true;
+            solutionRenderer.enabled = true;
+        } else
+        {
+            solutionRenderer.enabled = false;
+        }
+        if(conicalFlaskLiquidScript_Back.level == 0.36f)
+        {
             isFilled = true;
         }
         else
@@ -57,7 +66,7 @@ public class BeakerSolutionScript_Back : MonoBehaviour
             isFilled = false;
         }
 
-        if(isReacting)
+        if (isReacting)
         {
             //NOTE: it takes 10.5 seconds for the burette to be empty
             count += Time.deltaTime;

@@ -10,6 +10,8 @@ public class SocketCheckScript : MonoBehaviour
     XRSocketInteractor socketInteractor;
 
     Material validHover, invalidHover;
+
+    [SerializeField] ReagentBottlePourScript reagentBottlePourScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,16 @@ public class SocketCheckScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      if(reagentBottlePourScript != null)
+        {
+            if(reagentBottlePourScript.grabbed)
+            {
+                socketInteractor.allowSelect = false;
+            } else
+            {
+                socketInteractor.allowSelect = true;
+            }
+        }
     }
 
     public void HoveringEnterSocket()

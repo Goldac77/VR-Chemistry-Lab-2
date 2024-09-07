@@ -5527,6 +5527,7 @@ MonoBehaviour:
   capSocket: {fileID: 1816766444319422489}
   capAttached: 0
   debugger: {fileID: 805004198218087471}
+  grabbed: 0
 --- !u!1 &5200558527605057829
 GameObject:
   m_ObjectHideFlags: 0
@@ -6192,8 +6193,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
-  m_InteractableHoverMeshMaterial: {fileID: 0}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 1c69d3b06c884844f91d3c655d5c6049, type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 7390553463975553142, guid: 7ab6f3b0fd1a6ba41b2a47766c16613f, type: 3}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -6215,6 +6216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowedObject: {fileID: 7076685245548908323}
+  reagentBottlePourScript: {fileID: 6350603844842780378}
 --- !u!1001 &8175168027797453989
 PrefabInstance:
   m_ObjectHideFlags: 0
