@@ -1294,7 +1294,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4605727381581063141}
-  m_Mesh: {fileID: 4300000, guid: ce52017ec71596940b9b491c9a4974e3, type: 2}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8812227170594931315
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   _useLightColor: 0
   _directionalLight: {fileID: 0}
   _liquidColor1: {r: 0, g: 1, b: 0, a: 1}
-  _liquidScale1: 1
+  _liquidScale1: 0.93
   _liquidColor2: {r: 1, g: 0, b: 0, a: 0}
   _liquidScale2: 5
   _alpha: 1
@@ -8356,6 +8356,7 @@ GameObject:
   - component: {fileID: 5388168925518119615}
   - component: {fileID: 8964816025556183988}
   - component: {fileID: 7254722041977912374}
+  - component: {fileID: 7123276935640947101}
   m_Layer: 0
   m_Name: tap
   m_TagString: Untagged
@@ -8759,6 +8760,7 @@ MonoBehaviour:
   beakerSolutionScript_back: {fileID: 7974972019220145392}
   buretteSolutionScript_Back: {fileID: 4795970196290088835}
   flowRate: 0.04
+  actionDeniedSound: {fileID: 7123276935640947101}
 --- !u!114 &7254722041977912374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8772,6 +8774,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
+--- !u!82 &7123276935640947101
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8643892701022872203}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 429f250197b9c7a4eaa652c02cd519e5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8658991243698886973
 GameObject:
   m_ObjectHideFlags: 0
@@ -9115,7 +9213,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 313364689187790741, guid: 7ae6cbc7de545a74bba4f810314374d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7974972019220145392}
+    - targetCorrespondingSourceObject: {fileID: 313364689187790741, guid: 7ae6cbc7de545a74bba4f810314374d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2396369233376042720}
   m_SourcePrefab: {fileID: 100100000, guid: 7ae6cbc7de545a74bba4f810314374d0, type: 3}
+--- !u!4 &579499919444642686 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4940956997266672985, guid: 7ae6cbc7de545a74bba4f810314374d0, type: 3}
+  m_PrefabInstance: {fileID: 5520008168309130791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4637137509986286454 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ae6cbc7de545a74bba4f810314374d0, type: 3}
@@ -9418,6 +9524,103 @@ MonoBehaviour:
   indicatorAdded: 0
   isAcidFilled: 0
   isBaseFilled: 0
+  actionDeniedSound: {fileID: 2396369233376042720}
+--- !u!82 &2396369233376042720
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242833904353827250}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 429f250197b9c7a4eaa652c02cd519e5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &5409310595624165836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ae6cbc7de545a74bba4f810314374d0, type: 3}
@@ -9780,6 +9983,14 @@ PrefabInstance:
       propertyPath: TriggerModule.primitives.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[0]
+      value: 
+      objectReference: {fileID: 4837784328558929503}
+    - target: {fileID: 6127342822788670011, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[1]
+      value: 
+      objectReference: {fileID: 579499919444642686}
     - target: {fileID: 7075994365856210184, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9824,6 +10035,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7238400381134009613, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      propertyPath: reagentBottlePourScript
+      value: 
+      objectReference: {fileID: 2270110507234578976}
     - target: {fileID: 7600154010652641202, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
       propertyPath: m_Name
       value: Reagent bottle Variant (HCL)
@@ -9975,6 +10190,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6714859620430087390, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
     - {fileID: 988341168974436697, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+    - {fileID: 5197087516928965009, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+    - {fileID: 8089344479474820229, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8056649104778703474, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
@@ -9987,6 +10204,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3239893147750859207, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7320128397701666534}
+    - targetCorrespondingSourceObject: {fileID: 4985974437903029905, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6369582999469915637}
   m_SourcePrefab: {fileID: 100100000, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
 --- !u!4 &465145943205893642 stripped
 Transform:
@@ -10009,6 +10229,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3209884817108677353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4985974437903029905, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+  m_PrefabInstance: {fileID: 7618525318538454136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6369582999469915637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209884817108677353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b41c63b72dbef94fa75db69cb0df389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beakerSolutionScript_Back: {fileID: 7974972019220145392}
+  buretteScript_Back: {fileID: 1274836584211624536}
+  acidColor: {r: 0, g: 1, b: 0.15294118, a: 1}
+  baseColor: {r: 0, g: 0, b: 0, a: 0}
+  isAcid: 0
+  isBase: 0
+  buretteLiquidScript_Back: {fileID: 4795970196290088835}
+  conicalFlaskLiquidScript_Back: {fileID: 5573425066587656282}
+  fillRate: 0.1
+  actionDeniedSound: {fileID: 5721486587855209406}
 --- !u!114 &4239062917400664323 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6011844987958820219, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
@@ -10060,6 +10307,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
+--- !u!82 &5721486587855209406 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2800321792781608902, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
+  m_PrefabInstance: {fileID: 7618525318538454136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7976459039424347664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10377,6 +10629,18 @@ PrefabInstance:
       propertyPath: TriggerModule.primitives.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[0]
+      value: 
+      objectReference: {fileID: 4837784328558929503}
+    - target: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[1]
+      value: 
+      objectReference: {fileID: 579499919444642686}
+    - target: {fileID: 5371917467700554119, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      propertyPath: reagentBottlePourScript
+      value: 
+      objectReference: {fileID: 6601928213467925864}
     - target: {fileID: 8863646362735856645, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -10391,6 +10655,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2871139309735321436, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+    - {fileID: 6991230089272057026, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+    - {fileID: 6350603844842780378, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 125015989733118709, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
@@ -10403,7 +10669,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4793161973492441408, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
       insertIndex: -1
       addedObject: {fileID: 976975472269406859}
+    - targetCorrespondingSourceObject: {fileID: 3117458065820464662, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4558104445377810433}
   m_SourcePrefab: {fileID: 100100000, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+--- !u!82 &2707267101055004337 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5401496403242220521, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+  m_PrefabInstance: {fileID: 8027628170384594264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3306598849788523544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4793161973492441408, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
@@ -10439,6 +10713,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0, b: 0.827451, a: 0.50980395}
+--- !u!1 &4910246108415320910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3117458065820464662, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
+  m_PrefabInstance: {fileID: 8027628170384594264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4558104445377810433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4910246108415320910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b41c63b72dbef94fa75db69cb0df389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beakerSolutionScript_Back: {fileID: 7974972019220145392}
+  buretteScript_Back: {fileID: 1274836584211624536}
+  acidColor: {r: 0, g: 0, b: 0, a: 0}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  isAcid: 0
+  isBase: 0
+  buretteLiquidScript_Back: {fileID: 4795970196290088835}
+  conicalFlaskLiquidScript_Back: {fileID: 5573425066587656282}
+  fillRate: 0.1
+  actionDeniedSound: {fileID: 2707267101055004337}
 --- !u!198 &6061209929231767524 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4285846953488499388, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}

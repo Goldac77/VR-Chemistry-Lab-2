@@ -19,7 +19,6 @@ public class ScaleReadingScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.gameObject.name);
         if(other.gameObject.tag == "soluble")
         {
             scaleObjects.Add(other.gameObject.GetComponent<Rigidbody>().mass);

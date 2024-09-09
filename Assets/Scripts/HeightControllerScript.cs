@@ -8,7 +8,8 @@ public class HeightControllerScript : MonoBehaviour
 {
     [SerializeField] InputActionReference primaryButtonReference;
     [SerializeField] InputActionReference secondaryButtonReference;
-    [SerializeField] AudioSource pressed;
+    [SerializeField] AudioSource heightIncrease;
+    [SerializeField] AudioSource heightDecrease;
     bool primaryButtonPressed;
     bool secondaryButtonPressed;
     float playerHeight;
@@ -36,7 +37,7 @@ public class HeightControllerScript : MonoBehaviour
             } else
             {
                 playerHeight += 0.2f;
-                pressed.Play();
+                heightIncrease.Play();
             }
             UpdateHeight();
         }
@@ -45,6 +46,7 @@ public class HeightControllerScript : MonoBehaviour
             if (playerHeight - 0.2f > 0.0f)
             {
                 playerHeight -= 0.2f;
+                heightDecrease.Play();
             }
             else
             {

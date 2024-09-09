@@ -17,6 +17,8 @@ public class BuretteTapScript_Back : MonoBehaviour
 
     [SerializeField] float flowRate;
 
+    [SerializeField] AudioSource actionDeniedSound;
+
     private void Start()
     {
         tapGrabbed = false;
@@ -34,17 +36,14 @@ public class BuretteTapScript_Back : MonoBehaviour
             {
                 volume -= flowRate * Time.deltaTime;
 
-                //edge case bug fix, not ideal lol
+                //edge case bug fix
                 if(volume < 0.0f)
                 {
                     volume = 0.0f;
                     liquidFlowing.Stop();
+                    buretteScript_back.isFilled = false;
                 }
-            } else
-            {
-                buretteScript_back.isFilled = false;
             }
-
             buretteSolutionScript_Back.level = volume;
         }
     }
@@ -66,15 +65,18 @@ public class BuretteTapScript_Back : MonoBehaviour
                 else
                 {
                     Debug.Log("Add indicator first lol");
+                    actionDeniedSound.Play();
                 }
             } else
             {
                 Debug.Log("You need to remove the funnel");
+                actionDeniedSound.Play();
             } 
             
         } else
         {
             Debug.Log("I'm empty :/");
+            actionDeniedSound.Play();
         }
         tapGrabbed = true;
         

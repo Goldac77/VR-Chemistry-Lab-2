@@ -34,6 +34,8 @@ public class BeakerSolutionScript_Back : MonoBehaviour
 
     Renderer solutionRenderer;
 
+    [SerializeField] AudioSource actionDeniedSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -140,6 +142,8 @@ public class BeakerSolutionScript_Back : MonoBehaviour
             } else
             {
                 Debug.Log("Fill the conical flask first dude...");
+                actionDeniedSound.Play();
+                
             }
 
             if(lowSoluble)

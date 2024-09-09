@@ -12,6 +12,8 @@ public class PipetteScript : MonoBehaviour
 
 
     public bool solutionPicked;
+
+    [SerializeField] AudioSource actionDeniedSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,7 @@ public class PipetteScript : MonoBehaviour
             } else
             {
                 Debug.Log("nice try lol");
+                actionDeniedSound.Play();
             }
             
         }

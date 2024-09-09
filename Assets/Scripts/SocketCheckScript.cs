@@ -38,11 +38,13 @@ public class SocketCheckScript : MonoBehaviour
     public void HoveringEnterSocket()
     {
         IXRHoverInteractable objectInSocket = socketInteractor.GetOldestInteractableHovered();
-
         if (objectInSocket.transform.name != allowedObject.transform.name)
         {
             socketInteractor.interactableHoverMeshMaterial = invalidHover;
             socketInteractor.allowSelect = false;
+        } else
+        {
+            socketInteractor.allowSelect = true;
         }
     }
 

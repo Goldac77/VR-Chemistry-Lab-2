@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReagentBottleLiquidScript : MonoBehaviour
+public class ReagentBottleLiquidScript_Back : MonoBehaviour
 {
-    [SerializeField] BeakerSolutionScript beakerSolutionScript;
-    [SerializeField] BuretteScript buretteScript;
+    [SerializeField] BeakerSolutionScript_Back beakerSolutionScript_Back;
+    [SerializeField] BuretteScript_Back buretteScript_Back;
 
     [SerializeField] Color acidColor;
     [SerializeField] Color baseColor;
@@ -14,8 +14,8 @@ public class ReagentBottleLiquidScript : MonoBehaviour
     [SerializeField] bool isAcid;
     [SerializeField] bool isBase;
 
-    [SerializeField] LiquidVolume buretteLiquidScript;
-    [SerializeField] LiquidVolume conicalFlaskLiquidScript;
+    [SerializeField] LiquidVolume buretteLiquidScript_Back;
+    [SerializeField] LiquidVolume conicalFlaskLiquidScript_Back;
 
     [SerializeField] float fillRate;
 
@@ -29,86 +29,90 @@ public class ReagentBottleLiquidScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnParticleTrigger()
     {
-        if (buretteScript.funnelSnapped)
+        if (buretteScript_Back.funnelSnapped)
         {
             //Possible bug?
             //The logic here has a LOT of issues, and edge cases that need to be fixed
-            if (buretteScript.isFilled)
+            if (buretteScript_Back.isFilled)
             {
                 Debug.Log("burette is filled");
                 //play a different sound
                 //actionDeniedSound.Play();
             }
-            else if(!beakerSolutionScript.isFilled)
+            else if (!beakerSolutionScript_Back.isFilled)
             {
                 //do nothing
             }
             else
             {
-                if(isAcid)
+                if (isAcid)
                 {
-                    buretteLiquidScript.liquidColor1 = acidColor;
-                } else
+                    buretteLiquidScript_Back.liquidColor1 = acidColor;
+                }
+                else
                 {
-                    buretteLiquidScript.liquidColor1 = baseColor;
+                    buretteLiquidScript_Back.liquidColor1 = baseColor;
                 }
                 StartCoroutine(FillBurette());
             }
-        } else
+        }
+        else
         {
-            if(beakerSolutionScript.isFilled)
+            if (beakerSolutionScript_Back.isFilled)
             {
                 Debug.Log("Conical flask filled");
                 //play a different sound
                 //actionDeniedSound.Play();
-            } else
+            }
+            else
             {
-                if(!buretteScript.funnelSnapped)
+                if (!buretteScript_Back.funnelSnapped)
                 {
                     StartCoroutine(FillConicalFlask());
                     if (isAcid)
                     {
-                        conicalFlaskLiquidScript.liquidColor1 = acidColor;
-                        beakerSolutionScript.isAcidFilled = true;
+                        conicalFlaskLiquidScript_Back.liquidColor1 = acidColor;
+                        beakerSolutionScript_Back.isAcidFilled = true;
                     }
                     else
                     {
-                        conicalFlaskLiquidScript.liquidColor1 = baseColor;
-                        beakerSolutionScript.isBaseFilled = true;
+                        conicalFlaskLiquidScript_Back.liquidColor1 = baseColor;
+                        beakerSolutionScript_Back.isBaseFilled = true;
                     }
                 }
-            } 
+            }
         }
     }
 
     IEnumerator FillBurette()
     {
-        float volume = buretteLiquidScript.level;
+        float volume = buretteLiquidScript_Back.level;
         float maxFill = 1.0f;
-        while(volume < maxFill)
+        while (volume < maxFill)
         {
             volume += fillRate * Time.deltaTime;
             volume = Mathf.Min(volume, maxFill);
-            buretteLiquidScript.level = volume;
+            buretteLiquidScript_Back.level = volume;
             yield return null;
         }
     }
 
     IEnumerator FillConicalFlask()
     {
-        float volume = conicalFlaskLiquidScript.level;
+        float volume = conicalFlaskLiquidScript_Back.level;
         float maxFill = 0.36f;
-        while(volume < maxFill)
+        while (volume < maxFill)
         {
             volume += fillRate * Time.deltaTime;
             volume = Mathf.Min(volume, maxFill);
-            conicalFlaskLiquidScript.level = volume;
+            conicalFlaskLiquidScript_Back.level = volume;
             yield return null;
         }
     }
 }
+
