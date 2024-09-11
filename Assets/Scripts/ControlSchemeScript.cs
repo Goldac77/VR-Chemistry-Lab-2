@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ControlSchemeScript : MonoBehaviour
 {
+    public GameObject leftRayInteractor;
+    public GameObject rightRayInteractor;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,10 @@ public class ControlSchemeScript : MonoBehaviour
     public void CloseUI()
     {
         gameObject.SetActive(false);
+        if(leftRayInteractor.activeInHierarchy || rightRayInteractor.activeInHierarchy)
+        {
+            leftRayInteractor.SetActive(false);
+            rightRayInteractor.SetActive(false);
+        } 
     }
 }

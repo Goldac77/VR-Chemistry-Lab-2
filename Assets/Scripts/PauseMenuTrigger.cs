@@ -17,22 +17,21 @@ public class PauseMenuTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (ControlCanvas.activeInHierarchy)
+        {
+            leftRayInteractor.SetActive(true);
+            rightRayInteractor.SetActive(true);
+        }
+        else
+        {
+            leftRayInteractor.SetActive(false);
+            rightRayInteractor.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(ControlCanvas.activeInHierarchy)
-        {
-            leftRayInteractor.SetActive(true);
-            rightRayInteractor.SetActive(true);
-        } else
-        {
-            leftRayInteractor.SetActive(false);
-            rightRayInteractor.SetActive(false);
-        }
-
         if(pauseMenu.action.triggered)
         {
             if(!pauseMenuCanvas.activeInHierarchy)
@@ -40,7 +39,13 @@ public class PauseMenuTrigger : MonoBehaviour
                 pauseMenuCanvas.SetActive(true);
                 leftRayInteractor.SetActive(true);
                 rightRayInteractor.SetActive(true);
-            } else
+            } else if(ControlCanvas.activeInHierarchy && pauseMenuCanvas.activeInHierarchy)
+            {
+                pauseMenuCanvas.SetActive(false);
+                leftRayInteractor.SetActive(true);
+                rightRayInteractor.SetActive(true);
+            }
+            else
             {
                 pauseMenuCanvas.SetActive(false);
                 leftRayInteractor.SetActive(false);

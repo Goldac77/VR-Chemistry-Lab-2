@@ -11,6 +11,8 @@ public class SocketCheckScript : MonoBehaviour
 
     Material validHover, invalidHover;
 
+    bool notAllowed;
+
     [SerializeField] ReagentBottlePourScript reagentBottlePourScript;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,9 @@ public class SocketCheckScript : MonoBehaviour
             if(reagentBottlePourScript.grabbed)
             {
                 socketInteractor.allowSelect = false;
+            } else if(!reagentBottlePourScript.grabbed && notAllowed)
+            {
+                socketInteractor.allowSelect = false;
             } else
             {
                 socketInteractor.allowSelect = true;
@@ -42,9 +47,11 @@ public class SocketCheckScript : MonoBehaviour
         {
             socketInteractor.interactableHoverMeshMaterial = invalidHover;
             socketInteractor.allowSelect = false;
+            notAllowed = true;
         } else
         {
             socketInteractor.allowSelect = true;
+            notAllowed = false;
         }
     }
 
@@ -52,5 +59,6 @@ public class SocketCheckScript : MonoBehaviour
     {
         socketInteractor.interactableHoverMeshMaterial = validHover;
         socketInteractor.allowSelect = true;
+        notAllowed = false;
     }
 }

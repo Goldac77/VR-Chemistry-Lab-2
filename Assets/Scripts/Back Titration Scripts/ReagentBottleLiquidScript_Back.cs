@@ -46,10 +46,6 @@ public class ReagentBottleLiquidScript_Back : MonoBehaviour
             }
             else if (!beakerSolutionScript_Back.isFilled)
             {
-                //do nothing
-            }
-            else
-            {
                 if (isAcid)
                 {
                     buretteLiquidScript_Back.liquidColor1 = acidColor;

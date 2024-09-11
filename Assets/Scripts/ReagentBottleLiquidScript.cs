@@ -44,16 +44,13 @@ public class ReagentBottleLiquidScript : MonoBehaviour
                 //play a different sound
                 //actionDeniedSound.Play();
             }
-            else if(!beakerSolutionScript.isFilled)
-            {
-                //do nothing
-            }
             else
             {
-                if(isAcid)
+                if (isAcid)
                 {
                     buretteLiquidScript.liquidColor1 = acidColor;
-                } else
+                }
+                else
                 {
                     buretteLiquidScript.liquidColor1 = baseColor;
                 }

@@ -38,7 +38,7 @@ public class BuretteScript : MonoBehaviour
             volume.text = "0ml";
         }
 
-        if(buretteLiquidScript.level <= 0)
+        if(buretteLiquidScript.level > 0)
         {
             isFilled = true;
         } else
