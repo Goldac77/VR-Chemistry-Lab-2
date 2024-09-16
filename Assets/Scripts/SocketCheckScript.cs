@@ -27,7 +27,7 @@ public class SocketCheckScript : MonoBehaviour
     {
       if(reagentBottlePourScript != null)
         {
-            if(reagentBottlePourScript.grabbed)
+            if(reagentBottlePourScript.grabbed && !reagentBottlePourScript.capAttached)
             {
                 socketInteractor.allowSelect = false;
             } else if(!reagentBottlePourScript.grabbed && notAllowed)

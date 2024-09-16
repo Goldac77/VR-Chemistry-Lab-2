@@ -7,38 +7,30 @@ public class ReagentBottlePourScript : MonoBehaviour
 {
     [SerializeField] ParticleSystem liquidPouring;
     [SerializeField] XRSocketInteractor capSocket;
-    [SerializeField] bool capAttached;
+    [HideInInspector] public bool capAttached;
     [SerializeField] Debugger debugger;
 
     [HideInInspector] public bool grabbed;
-    // Start is called before the first frame update
 
     Vector3 bottleRotation;
+
+    Transform bottleTransform;
+
+    [SerializeField] float pourAngleThreshold = 45f;
+
+    // Start is called before the first frame update
     void Start()
     {
         capAttached = false;
+        bottleTransform = transform;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!capAttached)
         {
-            if (gameObject.transform.localEulerAngles.z > 86.0f && gameObject.transform.localEulerAngles.z < 170.0f)
-            {
-                debugger.DisplayMessage("Pouring");
-                if (!liquidPouring.isPlaying)
-                {
-                    liquidPouring.Play();
-                }
-            }
-            else
-            {
-                if (liquidPouring.isPlaying)
-                {
-                    liquidPouring.Stop();
-                }
-            }
+            CheckTiltAndPour();
         }
     }
 
@@ -65,5 +57,28 @@ public class ReagentBottlePourScript : MonoBehaviour
             capAttached = false;
         }
 
+    }
+
+    void CheckTiltAndPour()
+    {
+        Vector3 bottleUp = bottleTransform.up;
+
+        float tiltAngle = Vector3.Angle(bottleUp, Vector3.up);
+
+        if (tiltAngle >= pourAngleThreshold)
+        {
+            liquidPouring.transform.localRotation = Quaternion.LookRotation(bottleTransform.up);
+            if (!liquidPouring.isEmitting)
+            {
+                liquidPouring.Play();
+            }
+        }
+        else
+        {
+            if (liquidPouring.isEmitting)
+            {
+                liquidPouring.Stop();
+            }
+        }
     }
 }
