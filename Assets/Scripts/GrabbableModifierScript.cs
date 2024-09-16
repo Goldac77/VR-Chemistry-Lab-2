@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -10,11 +11,20 @@ public class GrabbableModifierScript : MonoBehaviour
 
     Color defaultColor;
     [SerializeField] Color hoverColor;
+
+    XRGrabInteractable grabInteractable;
+
+    Renderer grabbableRenderer;
+
+    bool socketGrabbed;
     // Start is called before the first frame update
     void Start()
     {
         grabbableObject = gameObject;
-        defaultColor = grabbableObject.GetComponent<Renderer>().material.color;
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        grabbableRenderer = GetComponent<Renderer>();
+        defaultColor = grabbableRenderer.material.color;
+        socketGrabbed = true;
     }
 
     // Update is called once per frame
@@ -25,21 +35,47 @@ public class GrabbableModifierScript : MonoBehaviour
 
     public void OnHoverEnter()
     {
-        grabbableObject.GetComponent<Renderer>().material.color = hoverColor;
+        if(gameObject.transform.name == "Cap")
+        {
+            if(socketGrabbed && grabInteractable.interactorsHovering.Any(interactor => interactor.transform.name != "capAttach"))
+            {
+                grabbableRenderer.material.color = hoverColor;
+            } else if(!socketGrabbed && grabInteractable.interactorsHovering.Any(interactor => interactor.transform.name != "capAttach"))
+            {
+                grabbableRenderer.material.color = hoverColor;
+            }
+        } else
+        {
+            grabbableRenderer.material.color = hoverColor;
+        }
     }
 
     public void OnHoverExit()
     {
-        grabbableObject.GetComponent<Renderer>().material.color = defaultColor;
+        if(gameObject.transform.name == "Cap" && socketGrabbed)
+        {
+            grabbableRenderer.material.color = defaultColor;
+        } else
+        {
+            grabbableRenderer.material.color = defaultColor;
+        }
     }
 
     public void OnGrabbed()
     {
-        grabbableObject.GetComponent<Renderer>().material.color = hoverColor;
+        IXRSelectInteractor interactor = grabInteractable.firstInteractorSelecting;
+        if (interactor.transform.name != "capAttach")
+        {
+            grabbableRenderer.material.color = hoverColor;
+        } else
+        {
+            socketGrabbed = true;
+        }
     }
 
     public void OnGrabExited()
     {
-        grabbableObject.GetComponent<Renderer>().material.color = defaultColor;
+        grabbableRenderer.material.color = defaultColor;
+        socketGrabbed = false;
     }
 }
