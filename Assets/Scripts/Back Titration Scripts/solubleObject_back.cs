@@ -30,6 +30,16 @@ public class solubleObject_back : MonoBehaviour
         }
     }
 
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject == weighingBoat)
+        {
+            Vector3 weighingBoatScale = weighingBoat.transform.lossyScale;
+            gameObject.transform.parent = weighingBoat.transform;
+            gameObject.transform.localScale = new Vector3(startWorldScale.x / weighingBoatScale.x, startWorldScale.y / weighingBoatScale.y, startWorldScale.z / weighingBoatScale.z);
+        }
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         if(collision.gameObject == weighingBoat)

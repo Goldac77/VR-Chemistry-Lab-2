@@ -61,6 +61,14 @@ public class GrabbableModifierScript : MonoBehaviour
         }
     }
 
+    public void CapHoverExit()
+    {
+        if(gameObject.transform.name == "Cap")
+        {
+            grabbableRenderer.material.color = defaultColor;
+        }
+    }
+
     public void OnGrabbed()
     {
         IXRSelectInteractor interactor = grabInteractable.firstInteractorSelecting;

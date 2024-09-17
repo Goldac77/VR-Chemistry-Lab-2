@@ -1101,7 +1101,19 @@ MonoBehaviour:
         m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3241519023423841737}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: CapHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2560,7 +2572,19 @@ MonoBehaviour:
         m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6324193635752411681}
+        m_TargetAssemblyTypeName: GrabbableModifierScript, Assembly-CSharp
+        m_MethodName: CapHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -10722,7 +10746,7 @@ PrefabInstance:
     - target: {fileID: 7238400381134009613, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
       propertyPath: allowedObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6992564312514257888}
     - target: {fileID: 7238400381134009613, guid: 73a0f6891f314d946bc79e2b65b37144, type: 3}
       propertyPath: reagentBottlePourScript
       value: 
@@ -11296,7 +11320,7 @@ PrefabInstance:
     - target: {fileID: 5371917467700554119, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
       propertyPath: allowedObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4554433528332153446}
     - target: {fileID: 5371917467700554119, guid: 972d191c3ad827a4cab868148ab16a10, type: 3}
       propertyPath: reagentBottlePourScript
       value: 
