@@ -20,16 +20,33 @@ public class ReagentBottleLiquidScript : MonoBehaviour
     [SerializeField] float fillRate;
 
     [SerializeField] AudioSource actionDeniedSound;
+
+    bool isPouring;
+
+    ParticleSystem particleSystemMain;
+
+    Coroutine currentCoroutine;
     // Start is called before the first frame update
     void Start()
     {
-
+        particleSystemMain = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(particleSystemMain.isEmitting)
+        {
+            isPouring = true;
+        } else
+        {
+            isPouring = false;
+            if(currentCoroutine != null)
+            {
+                StopCoroutine(currentCoroutine);
+                currentCoroutine = null;
+            }
+        }
     }
 
     private void OnParticleTrigger()
@@ -54,7 +71,10 @@ public class ReagentBottleLiquidScript : MonoBehaviour
                 {
                     buretteLiquidScript.liquidColor1 = baseColor;
                 }
-                StartCoroutine(FillBurette());
+                if(currentCoroutine == null)
+                {
+                    currentCoroutine = StartCoroutine(FillBurette());
+                }
             }
         } else
         {
@@ -67,7 +87,11 @@ public class ReagentBottleLiquidScript : MonoBehaviour
             {
                 if(!buretteScript.funnelSnapped)
                 {
-                    StartCoroutine(FillConicalFlask());
+                    if(currentCoroutine == null)
+                    {
+                        currentCoroutine = StartCoroutine(FillConicalFlask());
+                    }
+                    
                     if (isAcid)
                     {
                         conicalFlaskLiquidScript.liquidColor1 = acidColor;
@@ -89,11 +113,18 @@ public class ReagentBottleLiquidScript : MonoBehaviour
         float maxFill = 1.0f;
         while(volume < maxFill)
         {
-            volume += fillRate * Time.deltaTime;
-            volume = Mathf.Min(volume, maxFill);
-            buretteLiquidScript.level = volume;
-            yield return null;
+            if(isPouring)
+            {
+                volume += fillRate * Time.deltaTime;
+                volume = Mathf.Min(volume, maxFill);
+                buretteLiquidScript.level = volume;
+                yield return null;
+            } else
+            {
+                break;
+            }
         }
+        currentCoroutine = null;
     }
 
     IEnumerator FillConicalFlask()
@@ -102,10 +133,17 @@ public class ReagentBottleLiquidScript : MonoBehaviour
         float maxFill = 0.36f;
         while(volume < maxFill)
         {
-            volume += fillRate * Time.deltaTime;
-            volume = Mathf.Min(volume, maxFill);
-            conicalFlaskLiquidScript.level = volume;
-            yield return null;
+            if(isPouring)
+            {
+                volume += fillRate * Time.deltaTime;
+                volume = Mathf.Min(volume, maxFill);
+                conicalFlaskLiquidScript.level = volume;
+                yield return null;
+            } else
+            {
+                break;
+            }
         }
+        currentCoroutine = null;
     }
 }

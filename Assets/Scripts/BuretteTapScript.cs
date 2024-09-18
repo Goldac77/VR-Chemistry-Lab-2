@@ -53,7 +53,7 @@ public class BuretteTapScript : MonoBehaviour
         //get the material of the liquid in the burette and apply to particle system
         var main = liquidFlowing.main;
         main.startColor = buretteLiquidScript.liquidColor1;
-        if(buretteScript.isFilled)
+        if(buretteLiquidScript.level > 0)
         {
             if(!buretteScript.funnelSnapped)
             {
