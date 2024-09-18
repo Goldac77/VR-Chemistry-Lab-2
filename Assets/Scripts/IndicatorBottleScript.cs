@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class IndicatorBottleScript : MonoBehaviour
 {
-    [Tooltip("Indicator Dropper GameObject")]
-    [SerializeField] GameObject dropper;
-
-    [Tooltip("Indicator Dropper Script")]
-    [SerializeField] IndicatorDropperScript dropperScript;
+    Vector3 startingTransformPosition;
+    Quaternion startingTransformRotation;
+    [HideInInspector] public bool shifted;
     // Start is called before the first frame update
     void Start()
     {
-        
+        startingTransformPosition = transform.position;
+        startingTransformRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -21,23 +20,16 @@ public class IndicatorBottleScript : MonoBehaviour
         
     }
 
-    public void OnGrabbed()
+    private void FixedUpdate()
     {
-        //make dropper child if dropper is not currently being held
-        if(!dropperScript.dropperPicked)
+        if(startingTransformPosition != transform.position || startingTransformRotation != transform.rotation)
         {
-            dropper.transform.parent = transform;
-        }
-        
-    }
-
-    public void OnGrabExited()
-    {
-        if (dropperScript.dropperParent != dropper.transform.parent)
+            shifted = true;
+            transform.position = startingTransformPosition;
+            transform.rotation = startingTransformRotation;
+        } else
         {
-            dropper.transform.parent = dropperScript.dropperParent;
+            shifted = false;
         }
-        //bug fix?
-        //dropper.transform.rotation = dropperScript.dropperParent.rotation;
     }
 }

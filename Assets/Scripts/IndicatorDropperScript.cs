@@ -5,23 +5,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class IndicatorDropperScript : MonoBehaviour
 {
-    [Tooltip("Indicator dropper stationary position")]
-    [SerializeField] Transform dropperPosition;
+    Vector3 dropperPosition;
+    Quaternion dropperRotation;
 
-    [Tooltip("Indicator dropper bottle")]
-    [SerializeField] GameObject dropperBottle;
-
-    [HideInInspector] public Transform dropperParent;
     [HideInInspector] public bool dropperPicked;
 
-    //Make dropper child of bottle when bottle is grabbed and dropper is not grabed
-    //else maintain current heirachy
-    //
+    [SerializeField] IndicatorBottleScript indicatorBottleScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        dropperParent = gameObject.transform.parent;
+        dropperPosition = transform.position;
+        dropperRotation = transform.rotation;
         dropperPicked = false;
     }
 
@@ -30,17 +25,22 @@ public class IndicatorDropperScript : MonoBehaviour
         dropperPicked = true;
     }
 
-    //Bring dropper back when released
     public void OnGrabExited()
     {
-        transform.rotation = dropperPosition.rotation;
-        transform.position = dropperPosition.position;
         dropperPicked = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        //always move dropper with bottle
-        //transform.position = dropperPosition.transform.position;
+        if(!dropperPicked)
+        {
+            transform.position = dropperPosition;
+            transform.rotation = dropperRotation;
+            if(indicatorBottleScript.shifted)
+            {
+                transform.position = dropperPosition;
+                transform.rotation = dropperRotation;
+            }
+        }
     }
 }

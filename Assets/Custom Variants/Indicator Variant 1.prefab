@@ -307,37 +307,6 @@ MonoBehaviour:
   pointLightInsideAtten: 0
   fixedMesh: {fileID: 0}
   closedMesh: {fileID: 0}
---- !u!1 &6311923407478842898
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9118099149085286354}
-  m_Layer: 0
-  m_Name: Dropper Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9118099149085286354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6311923407478842898}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.013908386, y: -0.51, z: -0.0059375763}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1927858830529444897}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4425357178686723444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,7 +394,7 @@ PrefabInstance:
     - target: {fileID: -1847429950065539988, guid: 88883e831b550be4cb8cbd3d9547e534, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4c36fdc57eda26f46ac7ff6cf4347b80, type: 2}
+      objectReference: {fileID: 2100000, guid: c263fb13dff007c46b3acab9eb07a66d, type: 2}
     - target: {fileID: -4966957009494448, guid: 88883e831b550be4cb8cbd3d9547e534, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -452,9 +421,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6364950165352715947, guid: 88883e831b550be4cb8cbd3d9547e534, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4802935980869645639}
-    - targetCorrespondingSourceObject: {fileID: -6364950165352715947, guid: 88883e831b550be4cb8cbd3d9547e534, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9118099149085286354}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -3941164549346772188, guid: 88883e831b550be4cb8cbd3d9547e534, type: 3}
       insertIndex: -1
@@ -727,10 +693,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779b344a6d925764d87cda38317fcc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropperPosition: {fileID: 9118099149085286354}
-  dropperBottle: {fileID: 8368863835440442960}
-  dropperParent: {fileID: 0}
   dropperPicked: 0
+  dropperBottle: {fileID: 8368863835440442960}
+  indicatorBottleScript: {fileID: 1191239501722808560}
 --- !u!1 &8368863835440442960 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3941164549346772188, guid: 88883e831b550be4cb8cbd3d9547e534, type: 3}
@@ -972,5 +937,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4933b2116fb6784aa2e75f20ba463c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropper: {fileID: 4793057593155996452}
-  dropperScript: {fileID: 8115824121789204005}
+  shifted: 0
